@@ -1,0 +1,777 @@
+# encoding: utf-8
+# 2019 R2
+SetScriptVersion(Version="19.4.159")
+system1 = GetSystem(Name="FFF 4")
+results1 = system1.GetContainer(ComponentName="Results")
+results1.Edit()
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1 shadow, view=/VIEW:View 1""")
+resultsComponent1 = system1.GetComponent(Name="Results")
+resultsComponent1.Refresh()
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.282065, 0.249326, 0
+    Scale = 22.5069
+    Pan = -0.73136, 0.220644
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+>centerview 1""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = -0.171435, 0.249326, 0
+    Scale = 20.2333
+    Pan = -0.245906, 0.208593
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+> autolegend plot=/LINE:Line 1, view=VIEW:View 1""")
+results1.SendCommand(Command="""LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 10
+Line Type = Sample
+Line Width = 2
+Max = 0.0
+Min = 0.0
+Option = Two Points
+Point 1 = 0.2 [m], 0.375 [m], 0 [m]
+Point 2 = 0.2 [m], 0.355 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /LINE:Line 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="> autolegend plot=/CONTOUR:Mach, view=VIEW:View 1")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = -0.171435, 0.249326, 0
+    Scale = 15.4662
+    Pan = -0.245906, 0.208593
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+> autolegend plot=/LINE:Line 1, view=VIEW:View 1""")
+results1.SendCommand(Command="""LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 10
+Line Type = Sample
+Line Width = 2
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Option = Two Points
+Point 1 = 0.5 [m], 0.4 [m], 0 [m]
+Point 2 = 0.2 [m], 0.355 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = -0.171435, 0.249326, 0
+    Scale = 2.40534
+    Pan = -0.245906, 0.208593
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 10
+Line Type = Sample
+Line Width = 2
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Option = Two Points
+Point 1 = 0.5 [m], 0.4 [m], 0 [m]
+Point 2 = 0.02 [m], 0.355 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="> autolegend plot=/CONTOUR:Mach, view=VIEW:View 1")
+results1.SendCommand(Command="""CONTOUR:Mach
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = Mach Number
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = periodic 1
+Max = 0.0
+Min = 0.0
+Number of Contours = 200
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.5
+Use Face Values = Off
+Value List = 0,1
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""CONTOUR:Mach
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = Mach Number
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = periodic 1
+Max = 0.0
+Min = 0.0
+Number of Contours = 200
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.8
+Use Face Values = Off
+Value List = 0,1
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""CONTOUR:Mach
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = Mach Number
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = periodic 1
+Max = 0.0
+Min = 0.0
+Number of Contours = 200
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.8
+Use Face Values = Off
+Value List = 0,1
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1 shadow, view=/VIEW:View 1""")
+results1.SendCommand(Command="> autolegend plot=/LINE:Line 1, view=VIEW:View 1")
+results1.SendCommand(Command="""LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 10
+Line Type = Sample
+Line Width = 2
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Option = Two Points
+Point 1 = 0.5 [m], 0.4 [m], 0 [m]
+Point 2 = 0.08 [m], 0.355 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 10
+Line Type = Sample
+Line Width = 2
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Option = Two Points
+Point 1 = 0.5 [m], 0.4 [m], 0 [m]
+Point 2 = 0.05 [m], 0.355 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 10
+Line Type = Sample
+Line Width = 2
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Option = Two Points
+Point 1 = 0.05 [m], 0.4 [m], 0 [m]
+Point 2 = 0.05 [m], 0.355 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 10
+Line Type = Sample
+Line Width = 2
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Option = Two Points
+Point 1 = 0.05 [m], 0.375 [m], 0 [m]
+Point 2 = 0.05 [m], 0.355 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 10
+Line Type = Sample
+Line Width = 2
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Option = Two Points
+Point 1 = 0.05 [m], 0.0375 [m], 0 [m]
+Point 2 = 0.05 [m], 0.0355 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = -0.171435, 0.249326, 0
+    Scale = 24.3153
+    Pan = -0.245906, 0.208593
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 10
+Line Type = Sample
+Line Width = 2
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Option = Two Points
+Point 1 = 0.06 [m], 0.0375 [m], 0 [m]
+Point 2 = 0.06 [m], 0.0355 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""LINE:Line 1
+Apply Instancing Transform = On
+Colour = 1, 1, 0
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Domain List = /DOMAIN GROUP:All Domains
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Line Samples = 10
+Line Type = Sample
+Line Width = 2
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Option = Two Points
+Point 1 = 0.07 [m], 0.0375 [m], 0 [m]
+Point 2 = 0.07 [m], 0.0355 [m], 0 [m]
+Range = Global
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = -0.171435, 0.249326, 0
+    Scale = 23.1008
+    Pan = -0.274862, 0.224016
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+> autolegend plot=/CONTOUR:Mach, view=VIEW:View 1""")
+results1.SendCommand(Command="""CONTOUR:Mach
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = Mach Number
+Colour Variable Boundary Values = Conservative
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = Off
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Location List = periodic 1
+Max = 0.0
+Min = 0.0
+Number of Contours = 200
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.8
+Use Face Values = Off
+Value List = 0,1
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""CONTOUR:Mach
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = Mach Number
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = periodic 1
+Max = 0.0
+Min = 0.0
+Number of Contours = 200
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.8
+Use Face Values = Off
+Value List = 0,1
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command="""CONTOUR:Mach
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = Mach Number
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = periodic 1
+Max = 0.0
+Min = 0.0
+Number of Contours = 200
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.5
+Use Face Values = Off
+Value List = 0,1
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.Exit()
+Save(Overwrite=True)
