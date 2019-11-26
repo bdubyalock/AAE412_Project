@@ -1,0 +1,83 @@
+# encoding: utf-8
+# 2019 R2
+SetScriptVersion(Version="19.4.159")
+template1 = GetTemplate(TemplateName="Fluid Flow")
+system1 = template1.CreateSystem()
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometryProperties1 = geometry1.GetGeometryProperties()
+geometryProperties1.GeometryImportAnalysisType = "AnalysisType_2D"
+geometry1.Edit()
+geometry1.Exit()
+Save(Overwrite=True)
+system1.DisplayText = "Nozzle (a)"
+Save(Overwrite=True)
+system2 = template1.CreateSystem(
+    Position="Right",
+    RelativeTo=system1)
+system2.DisplayText = "Nozzle (b)"
+geometry2 = system2.GetContainer(ComponentName="Geometry")
+geometryProperties2 = geometry2.GetGeometryProperties()
+geometryProperties2.GeometryImportAnalysisType = "AnalysisType_2D"
+geometry2.Edit()
+geometry2.Exit()
+geometry1.Edit()
+geometry1.Exit()
+Save(Overwrite=True)
+geometry2.Edit()
+geometry2.Exit()
+geometry1.Edit()
+geometry1.Exit()
+geometry2.Edit()
+Save(Overwrite=True)
+geometry2.Exit()
+Save(Overwrite=True)
+Save(Overwrite=True)
+system3 = template1.CreateSystem(
+    Position="Right",
+    RelativeTo=system2)
+system3.DisplayText = "Nozzle (c)"
+geometry3 = system3.GetContainer(ComponentName="Geometry")
+geometryProperties3 = geometry3.GetGeometryProperties()
+geometryProperties3.GeometryImportAnalysisType = "AnalysisType_2D"
+geometry3.Edit(IsSpaceClaimGeometry=True)
+geometry3.Edit()
+geometry3.Exit()
+Save(Overwrite=True)
+Save(Overwrite=True)
+system4 = template1.CreateSystem(
+    Position="Right",
+    RelativeTo=system3)
+geometry4 = system4.GetContainer(ComponentName="Geometry")
+geometryProperties4 = geometry4.GetGeometryProperties()
+geometryProperties4.GeometryImportAnalysisType = "AnalysisType_2D"
+geometry4.Edit()
+geometry4.Exit()
+geometry3.Edit()
+geometry3.Exit()
+geometry2.Edit()
+geometry2.Exit()
+geometry1.Edit()
+geometry1.Exit()
+Save(Overwrite=True)
+meshComponent1 = system1.GetComponent(Name="Mesh")
+meshComponent1.Refresh()
+mesh1 = system1.GetContainer(ComponentName="Mesh")
+mesh1.Edit()
+mesh1.Edit()
+mesh1.Edit()
+mesh1.Edit()
+mesh1.Exit()
+geometry1.Edit()
+geometry1.Exit()
+Save(Overwrite=True)
+meshComponent1.Refresh()
+mesh1.Edit()
+mesh1.Exit()
+meshComponent1.Clean()
+meshComponent1.Reset()
+meshComponent1.Refresh()
+mesh1.Edit()
+mesh1.Exit()
+geometry1.Edit()
+geometry1.Exit()
+Save(Overwrite=True)
