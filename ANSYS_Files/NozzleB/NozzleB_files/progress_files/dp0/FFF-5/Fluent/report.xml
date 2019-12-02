@@ -1,7 +1,7 @@
 <FluentXMLReport>
 <version>
 Fluent
-Version: axi, dp, dbns imp, ske (axi, double precision, density-based implicit, standard k-epsilon)
+Version: axi, dp, dbns exp, rke (axi, double precision, density-based explicit, realizable k-epsilon)
 Release: 19.4.0
 Title: 
 </version>
@@ -11,22 +11,22 @@ Title:
 Models
 ------
 
-   Model                        Settings                              
-   ----------------------------------------------------------------
-   Space                        Axisymmetric                          
-   Time                         Steady                                
-   Viscous                      Standard k-epsilon turbulence model   
-   Wall Treatment               Standard Wall Functions               
-   Heat Transfer                Enabled                               
-   Solidification and Melting   Disabled                              
-   Radiation                    None                                  
-   Species                      Disabled                              
-   Coupled Dispersed Phase      Disabled                              
-   NOx Pollutants               Disabled                              
-   SOx Pollutants               Disabled                              
-   Soot                         Disabled                              
-   Mercury Pollutants           Disabled                              
-   Structure                    Disabled                              
+   Model                        Settings                                
+   ------------------------------------------------------------------
+   Space                        Axisymmetric                            
+   Time                         Steady                                  
+   Viscous                      Realizable k-epsilon turbulence model   
+   Wall Treatment               Standard Wall Functions                 
+   Heat Transfer                Enabled                                 
+   Solidification and Melting   Disabled                                
+   Radiation                    None                                    
+   Species                      Disabled                                
+   Coupled Dispersed Phase      Disabled                                
+   NOx Pollutants               Disabled                                
+   SOx Pollutants               Disabled                                
+   Soot                         Disabled                                
+   Mercury Pollutants           Disabled                                
+   Structure                    Disabled                                
 
 </Models>
 
@@ -96,8 +96,8 @@ Boundary Conditions
 
          Condition                           Value   
          -----------------------------------------
-         Gauge Pressure (pascal)             5       
-         Mach Number                         0.2     
+         Gauge Pressure (pascal)             20      
+         Mach Number                         0.1     
          Axial-Component of Flow Direction   -1      
 
       ambientinlet
@@ -106,7 +106,7 @@ Boundary Conditions
          --------------------------------------------------
          Velocity Specification Method                0       
          Velocity Magnitude (m/s)                     10      
-         Supersonic/Initial Gauge Pressure (pascal)   5       
+         Supersonic/Initial Gauge Pressure (pascal)   10      
          Axial-Component of Flow Direction            -1      
 
       flowinlet
@@ -117,7 +117,6 @@ Boundary Conditions
          Supersonic/Initial Gauge Pressure (pascal)   121590   
          Direction Specification Method               0        
          Axial-Component of Flow Direction            -1       
-         Turbulent Intensity (%)                      0        
 
       nozzlewall
 
@@ -155,18 +154,19 @@ Solver Settings
 
       Variable                     Relaxation Factor   
       ----------------------------------------------
-      Turbulent Kinetic Energy     0.75                
-      Turbulent Dissipation Rate   0.75                
+      Turbulent Kinetic Energy     0.8                 
+      Turbulent Dissipation Rate   0.8                 
       Turbulent Viscosity          1                   
+      Solid                        1                   
 
    Linear Solver
 
-                                   Solver    Termination   Residual Reduction   
-      Variable                     Type      Criterion     Tolerance            
-      -----------------------------------------------------------------------
-      Flow                         F-Cycle   0.1                                
-      Turbulent Kinetic Energy     F-Cycle   0.1                                
-      Turbulent Dissipation Rate   F-Cycle   0.1                                
+                                   Solver     Termination   Residual Reduction   
+      Variable                     Type       Criterion     Tolerance            
+      ------------------------------------------------------------------------
+      Flow                         V-Cycle    0.1                                
+      Turbulent Kinetic Energy     Flexible   0.1           0.7                  
+      Turbulent Dissipation Rate   Flexible   0.1           0.7                  
 
    Discretization Scheme
 
@@ -178,10 +178,33 @@ Solver Settings
 
    Time Marching
 
-      Parameter        Value      
-      -------------------------
-      Solver           Implicit   
-      Courant Number   5          
+      Parameter                       Value          
+      --------------------------------------------
+      Solver                          Explicit       
+      Courant Number                  1              
+      Residual Smoothing Iterations   0 (disabled)   
+      Residual Smoothing Factor       0.5            
+
+   Multigrid Solver
+
+      Parameter                      Value          
+      -------------------------------------------
+      Coarse Grid Levels             0 (disabled)   
+      Fine Grid Iterations           1              
+      Final Iterations               0              
+      -------------------------------------------
+      Time Step Reduction            0.9            
+      Correction Reduction           0.6            
+      Species Correction Reduction   1              
+      Correction Smoothing Factor    0.5            
+
+   Multi-Stage Scheme
+
+      Stage   Coefficient   Dissipation   Viscous   
+      -------------------------------------------
+      1       0.2075        yes           yes       
+      2       0.5915        yes           yes       
+      3       1             yes           yes       
 
    Solution Limits
 
