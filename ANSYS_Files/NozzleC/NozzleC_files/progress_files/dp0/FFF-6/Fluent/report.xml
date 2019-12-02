@@ -1,7 +1,7 @@
 <FluentXMLReport>
 <version>
 Fluent
-Version: axi, dp, dbns exp, skw (axi, double precision, density-based explicit, standard k-omega)
+Version: axi, dp, dbns exp, ske (axi, double precision, density-based explicit, standard k-epsilon)
 Release: 19.4.0
 Title: 
 </version>
@@ -11,21 +11,22 @@ Title:
 Models
 ------
 
-   Model                        Settings                            
-   --------------------------------------------------------------
-   Space                        Axisymmetric                        
-   Time                         Steady                              
-   Viscous                      Standard k-omega turbulence model   
-   Heat Transfer                Enabled                             
-   Solidification and Melting   Disabled                            
-   Radiation                    None                                
-   Species                      Disabled                            
-   Coupled Dispersed Phase      Disabled                            
-   NOx Pollutants               Disabled                            
-   SOx Pollutants               Disabled                            
-   Soot                         Disabled                            
-   Mercury Pollutants           Disabled                            
-   Structure                    Disabled                            
+   Model                        Settings                              
+   ----------------------------------------------------------------
+   Space                        Axisymmetric                          
+   Time                         Steady                                
+   Viscous                      Standard k-epsilon turbulence model   
+   Wall Treatment               Standard Wall Functions               
+   Heat Transfer                Enabled                               
+   Solidification and Melting   Disabled                              
+   Radiation                    None                                  
+   Species                      Disabled                              
+   Coupled Dispersed Phase      Disabled                              
+   NOx Pollutants               Disabled                              
+   SOx Pollutants               Disabled                              
+   Soot                         Disabled                              
+   Mercury Pollutants           Disabled                              
+   Structure                    Disabled                              
 
 </Models>
 
@@ -151,29 +152,29 @@ Solver Settings
 
    Relaxation
 
-      Variable                    Relaxation Factor   
-      ---------------------------------------------
-      Turbulent Kinetic Energy    0.8                 
-      Specific Dissipation Rate   0.8                 
-      Turbulent Viscosity         1                   
-      Solid                       1                   
+      Variable                     Relaxation Factor   
+      ----------------------------------------------
+      Turbulent Kinetic Energy     0.8                 
+      Turbulent Dissipation Rate   0.8                 
+      Turbulent Viscosity          1                   
+      Solid                        1                   
 
    Linear Solver
 
-                                  Solver     Termination   Residual Reduction   
-      Variable                    Type       Criterion     Tolerance            
-      -----------------------------------------------------------------------
-      Flow                        V-Cycle    0.1                                
-      Turbulent Kinetic Energy    Flexible   0.1           0.7                  
-      Specific Dissipation Rate   Flexible   0.1           0.7                  
+                                   Solver     Termination   Residual Reduction   
+      Variable                     Type       Criterion     Tolerance            
+      ------------------------------------------------------------------------
+      Flow                         V-Cycle    0.1                                
+      Turbulent Kinetic Energy     Flexible   0.1           0.7                  
+      Turbulent Dissipation Rate   Flexible   0.1           0.7                  
 
    Discretization Scheme
 
-      Variable                    Scheme                
-      -----------------------------------------------
-      Flow                        Second Order Upwind   
-      Turbulent Kinetic Energy    First Order Upwind    
-      Specific Dissipation Rate   First Order Upwind    
+      Variable                     Scheme                
+      ------------------------------------------------
+      Flow                         Second Order Upwind   
+      Turbulent Kinetic Energy     First Order Upwind    
+      Turbulent Dissipation Rate   First Order Upwind    
 
    Time Marching
 
@@ -214,7 +215,7 @@ Solver Settings
       Minimum Temperature              1        
       Maximum Temperature              5000     
       Minimum Turb. Kinetic Energy     1e-14    
-      Minimum Spec. Dissipation Rate   1e-20    
+      Minimum Turb. Dissipation Rate   1e-20    
       Maximum Turb. Viscosity Ratio    100000   
 
 </SolverSettings>
