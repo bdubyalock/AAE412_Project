@@ -84,13 +84,22 @@ Boundary Conditions
 
       name           id   type                 
       --------------------------------------
+      flowinlet      6    pressure-inlet       
       farfield       9    pressure-far-field   
-      flowinlet      6    velocity-inlet       
       ambientinlet   7    velocity-inlet       
       nozzlewall     8    wall                 
       axis           10   axis                 
 
    Setup Conditions
+
+      flowinlet
+
+         Condition                                    Value    
+         ---------------------------------------------------
+         Gauge Total Pressure (pascal)                121590   
+         Supersonic/Initial Gauge Pressure (pascal)   121590   
+         Direction Specification Method               0        
+         Axial-Component of Flow Direction            -1       
 
       farfield
 
@@ -99,13 +108,6 @@ Boundary Conditions
          Gauge Pressure (pascal)             20      
          Mach Number                         0.1     
          Axial-Component of Flow Direction   -1      
-
-      flowinlet
-
-         Condition                                    Value    
-         ---------------------------------------------------
-         Velocity Magnitude (m/s)                     121590   
-         Supersonic/Initial Gauge Pressure (pascal)   121590   
 
       ambientinlet
 
