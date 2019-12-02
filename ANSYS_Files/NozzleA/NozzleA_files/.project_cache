@@ -14,12 +14,13 @@ dp0/FFF-4/Fluent/MPT_Monitor_system.3.dbg
 dp0/FFF-4/Fluent/MPT_Monitor_system.999999.dbg
 dp0/FFF-4/MECH/FFF-4.msh
 dp0/FFF-4/Post/Nozzle a - COARSE.cst
-dp0/FFF-5/Fluent/FFF-5.2-4-02000.dat.gz
-dp0/FFF-5/Fluent/FFF-5.2-4.cas.gz
+dp0/FFF-5/Fluent/FFF-5.2-5-19963.dat.gz
+dp0/FFF-5/Fluent/FFF-5.2-5.cas.gz
 dp0/FFF-5/Fluent/FFF-5.2-Setup-Output.cas.gz
 dp0/FFF-5/Fluent/FFF-5.2.ip
 dp0/FFF-5/Fluent/FFF-5.2.set
 dp0/FFF-5/MECH/FFF-5.2.msh
+dp0/FFF-5/Post/Nozzlea - FINE.cst
 dp0/global/MECH/FFF-4.mshdb
 dp0/global/MECH/FFF-5.mshdb
 dp0/designPoint.wbdp
@@ -34,6 +35,7 @@ session_files/journal1.wbjn
 session_files/journal10.wbjn
 session_files/journal11.wbjn
 session_files/journal12.wbjn
+session_files/journal13.wbjn
 session_files/journal2.wbjn
 session_files/journal3.wbjn
 session_files/journal4.wbjn
@@ -54,9 +56,8 @@ dp0/FFF-4/MECH/
 dp0/FFF-4/Post/
 dp0/FFF-5/Fluent/
 dp0/FFF-5/MECH/
+dp0/FFF-5/Post/
 dp0/global/MECH/
-dp0/global/MECH/FFF-4/
-dp0/global/MECH/FFF-5/
 progress_files/dp0/
 progress_files/dp0/FFF-4/
 progress_files/dp0/FFF-5/

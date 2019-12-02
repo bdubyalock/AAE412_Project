@@ -2,10 +2,10 @@
 <Storage>
   <Project Version="9.1">
     <base-designpoint-name valType="String">0</base-designpoint-name>
-    <timestamp-max valType="Int64">16376</timestamp-max>
+    <timestamp-max valType="Int64">16518</timestamp-max>
     <framework-build-version valType="String">19.4.159.0</framework-build-version>
     <external-version-string valType="String">2019 R2</external-version-string>
-    <last-saved-utc valType="String">12/02/2019 01:16:23</last-saved-utc>
+    <last-saved-utc valType="String">12/02/2019 20:33:42</last-saved-utc>
     <managed-categories valType="String">[report, misc, progress]</managed-categories>
     <logHistory valType="StringArray">
       <ArrayEntry Index="0">blake26@X-ARMS2106PC09:C:\Users\blake26\AppData\Local\Temp\WorkbenchLogs\CoreEvents7764.log</ArrayEntry>
@@ -19,6 +19,7 @@
       <ArrayEntry Index="8">lockb@X-ARMS2106PC63:C:\Users\lockb\AppData\Local\Temp\WorkbenchLogs\CoreEvents14496.log</ArrayEntry>
       <ArrayEntry Index="9">lockb@X-ARMS2106PC63:C:\Users\lockb\AppData\Local\Temp\WorkbenchLogs\CoreEvents11820.log</ArrayEntry>
       <ArrayEntry Index="10">lockb@X-ARMS2106PC13:C:\Users\lockb\AppData\Local\Temp\WorkbenchLogs\CoreEvents12044.log</ArrayEntry>
+      <ArrayEntry Index="11">blake26@X-ARMS2106PC44:C:\Users\blake26\AppData\Local\Temp\WorkbenchLogs\CoreEvents15568.log</ArrayEntry>
     </logHistory>
     <expression-scope-container valType="String">Parameters</expression-scope-container>
     <project-type valType="String">WB2</project-type>
@@ -74,9 +75,10 @@
 "410f98d0-0fba-4db4-aba4-6076d5e677d2": "/FileContainer/FileReference:F172",
 "3fef4b13-befb-4db8-8df7-d306675ecc5d": "/FileContainer/FileReference:F173",
 "aa87cb11-b296-49d7-b568-e70e282c28b1": "/FileContainer/FileReference:F174",
-"2ae365a7-dc8b-43c1-bbba-df1f587d70d0": "/FileContainer/FileReference:F176",
-"ceabd70d-8cd3-4773-90f2-e51eade5ab55": "/FileContainer/FileReference:F177",
-"8cf5c4a5-414e-4c52-8186-a702f0fdd80f": "/FileContainer/FileReference:F175"
+"8cf5c4a5-414e-4c52-8186-a702f0fdd80f": "/FileContainer/FileReference:F175",
+"c22d29ca-27ca-46be-ae40-f3274847e013": "/FileContainer/FileReference:F179",
+"c202e0cd-558a-4bb8-a80b-810cfc9f4ad5": "/FileContainer/FileReference:F180",
+"e79c3472-f03f-42fb-b2e4-692315bc03b6": "/FileContainer/FileReference:F178"
 }</ReferenceList>
       </ProjectReferenceList>
       <DesignPointReferenceListCollection>
@@ -140,7 +142,7 @@
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 16373, "Input": 1370, "Output": 1370}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 16451, "Input": 1370, "Output": 1370}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">false</contains-significant-data>
       <Object Name="/FileContainer/FileReference:F2" Version="1.0">
@@ -208,10 +210,10 @@
         <object-name valType="String">F175</object-name>
         <member-data valType="String">{"DisplayText": "FFF-5.2.ip", "FileType": $$e5548b5b-1d2a-42df-807c-ff1b52539be2, "DependentFiles": [], "ContainerAssociations": ["Solution"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\FFF-5\Fluent\FFF-5.2.ip", "ReferenceCount": 1}</member-data>
       </Object>
-      <Object Name="/FileContainer/FileReference:F176" Version="1.0">
+      <Object Name="/FileContainer/FileReference:F179" Version="1.0">
         <class-type valType="String">FileReference</class-type>
-        <object-name valType="String">F176</object-name>
-        <member-data valType="String">{"DisplayText": "FFF-5.2-4.cas.gz", "FileType": $$642e35d9-d760-4948-9a5d-be8cb320dbd1, "DependentFiles": [$$ceabd70d-8cd3-4773-90f2-e51eade5ab55], "ContainerAssociations": ["Solution"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\FFF-5\Fluent\FFF-5.2-4.cas.gz", "ReferenceCount": 1}</member-data>
+        <object-name valType="String">F179</object-name>
+        <member-data valType="String">{"DisplayText": "FFF-5.2-5.cas.gz", "FileType": $$642e35d9-d760-4948-9a5d-be8cb320dbd1, "DependentFiles": [$$c202e0cd-558a-4bb8-a80b-810cfc9f4ad5], "ContainerAssociations": ["Solution"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\FFF-5\Fluent\FFF-5.2-5.cas.gz", "ReferenceCount": 1}</member-data>
       </Object>
       <Object Name="/FileContainer/FileReference:F173" Version="1.0">
         <class-type valType="String">FileReference</class-type>
@@ -223,15 +225,20 @@
         <object-name valType="String">F174</object-name>
         <member-data valType="String">{"DisplayText": "FFF-5.2.set", "FileType": $$33ac3195-bc6a-43af-83eb-860cb5fe9137, "DependentFiles": [], "ContainerAssociations": ["Setup"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\FFF-5\Fluent\FFF-5.2.set", "ReferenceCount": 1}</member-data>
       </Object>
-      <Object Name="/FileContainer/FileReference:F177" Version="1.0">
+      <Object Name="/FileContainer/FileReference:F180" Version="1.0">
         <class-type valType="String">FileReference</class-type>
-        <object-name valType="String">F177</object-name>
-        <member-data valType="String">{"DisplayText": "FFF-5.2-4-02000.dat.gz", "FileType": $$2af33507-06aa-4813-8fb4-5c8c5dfb5b59, "DependentFiles": [], "ContainerAssociations": ["Solution"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\FFF-5\Fluent\FFF-5.2-4-02000.dat.gz", "ReferenceCount": 1}</member-data>
+        <object-name valType="String">F180</object-name>
+        <member-data valType="String">{"DisplayText": "FFF-5.2-5-19963.dat.gz", "FileType": $$2af33507-06aa-4813-8fb4-5c8c5dfb5b59, "DependentFiles": [], "ContainerAssociations": ["Solution"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\FFF-5\Fluent\FFF-5.2-5-19963.dat.gz", "ReferenceCount": 1}</member-data>
       </Object>
       <Object Name="/FileContainer/FileReference:F167" Version="1.0">
         <class-type valType="String">FileReference</class-type>
         <object-name valType="String">F167</object-name>
         <member-data valType="String">{"DisplayText": "FFF-4.ip", "FileType": $$e5548b5b-1d2a-42df-807c-ff1b52539be2, "DependentFiles": [], "ContainerAssociations": ["Solution 4"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\FFF-4\Fluent\FFF-4.ip", "ReferenceCount": 1}</member-data>
+      </Object>
+      <Object Name="/FileContainer/FileReference:F178" Version="1.0">
+        <class-type valType="String">FileReference</class-type>
+        <object-name valType="String">F178</object-name>
+        <member-data valType="String">{"DisplayText": "Nozzlea - FINE.cst", "FileType": $$dae9cfcf-b92b-4d23-afeb-75f841e7ac63, "DependentFiles": [], "ContainerAssociations": ["Results"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\FFF-5\Post\Nozzlea - FINE.cst", "ReferenceCount": 1}</member-data>
       </Object>
     </Container>
     <Container Name="Messages" Version="1.0">
@@ -2240,13 +2247,13 @@ CommandName: Fluent.UpdateSolution(Container=\"Solution\", UpdateOptions=Set(Hel
       <maxUpdateOrder valType="Double">1</maxUpdateOrder>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 16328, "Input": 1375, "Output": 1374}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 16509, "Input": 16510, "Output": 1374}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
-      <contains-significant-data valType="Boolean">false</contains-significant-data>
+      <contains-significant-data valType="Boolean">true</contains-significant-data>
       <Object Name="/Parameters/DesignPoint:0" Version="1.0">
         <class-type valType="String">DesignPoint</class-type>
         <object-name valType="String">0</object-name>
-        <member-data valType="String">{"DisplayText": "DP 0", "JustDuplicated": False, "PartiallyRetainedData": [], "ValidRetainedData": [], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Mesh in FFF"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {}, "ParameterStatus": {}, "Note": None, "IsUpToDate": False, "Exported": True, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": True, "HasRetainedData": True, "HasBeenSolved": False, "UpdateOrder": 1}</member-data>
+        <member-data valType="String">{"DisplayText": "DP 0", "JustDuplicated": False, "PartiallyRetainedData": [], "ValidRetainedData": [], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Mesh in FFF"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {}, "ParameterStatus": {}, "Note": None, "IsUpToDate": True, "Exported": True, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": True, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 1}</member-data>
         <properties-setByUserFlag-data valType="String">["IsDataModelValid"]</properties-setByUserFlag-data>
       </Object>
       <Object Name="/Parameters/DesignPointReportSetting:Design Points Report Setting" Version="1.0">

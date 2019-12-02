@@ -1,4 +1,4 @@
-# State file created:  2019/12/01 19:10:32
+# State file created:  2019/12/02 12:43:44
 # CFX-19.4
 
 COMMENT:User Data
@@ -66,10 +66,10 @@ DATA READER:
   Clear All Objects = False
   Construct Variables From Fourier Coefficients = True
   Current Case List = Case Nozzle a COARSE
-  Current Case Name = W:\AAE412\Project\Git\ANSYS_Files\NozzleA\NozzleA_files\\
-dp0\FFF-4\Fluent\FFF-4.1-13-01000.dat.gz
-  Current Results File = W:\AAE412\Project\Git\ANSYS_Files\NozzleA\\
-NozzleA_files\dp0\FFF-4\Fluent\FFF-4.1-13-01000.dat.gz
+  Current Case Name = W:\Documents\urine\git\ANSYS_Files\NozzleA\NozzleA_files\\
+dp0\FFF-4\Fluent\FFF-4-15-01000.dat.gz
+  Current Results File = W:\Documents\urine\git\ANSYS_Files\NozzleA\\
+NozzleA_files\dp0\FFF-4\Fluent\FFF-4-15-01000.dat.gz
   Current Timestep = -1
   Current Timevalue = 0
   Edit Case Names = false
@@ -96,10 +96,10 @@ NozzleA_files\dp0\FFF-4\Fluent\FFF-4.1-13-01000.dat.gz
   Timevalue Match Criterion = Same Value
   CASE:Case Nozzle a COARSE
     Construct Variables From Fourier Coefficients = True
-    Current Case Name = W:\AAE412\Project\Git\ANSYS_Files\NozzleA\\
-NozzleA_files\dp0\FFF-4\Fluent\FFF-4.1-13-01000.dat.gz
-    Current Results File = W:\AAE412\Project\Git\ANSYS_Files\NozzleA\\
-NozzleA_files\dp0\FFF-4\Fluent\FFF-4.1-13-01000.dat.gz
+    Current Case Name = W:\Documents\urine\git\ANSYS_Files\NozzleA\\
+NozzleA_files\dp0\FFF-4\Fluent\FFF-4-15-01000.dat.gz
+    Current Results File = W:\Documents\urine\git\ANSYS_Files\NozzleA\\
+NozzleA_files\dp0\FFF-4\Fluent\FFF-4-15-01000.dat.gz
     Current Timestep = -1
     Current Timevalue = 0
     File Angle Units = rad
@@ -1047,11 +1047,11 @@ VIEW:View 1
   Standard View = Isometric Y
   CAMERA:
     Option = Pivot Point and Quaternion
-    Pan = -0.381783,-0.044911
-    Pivot Point = 0.532065,0,0
+    Pan = 0,0
+    Pivot Point = 0.78184,0,0
     Rotation = -90, 0, 0
     Rotation Quaternion = 0,0,0,1
-    Scale = 11.5694
+    Scale = 1.2489
     Send To Viewer = True
   END
 END
