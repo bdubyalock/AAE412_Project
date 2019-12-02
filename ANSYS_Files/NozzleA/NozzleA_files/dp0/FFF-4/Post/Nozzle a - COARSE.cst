@@ -1,4 +1,4 @@
-# State file created:  2019/11/26 09:50:21
+# State file created:  2019/12/01 19:10:32
 # CFX-19.4
 
 COMMENT:User Data
@@ -28,7 +28,7 @@ CONTOUR:Mach
   Location List = periodic 1
   Max = 0.0
   Min = 0.0
-  Number of Contours = 200
+  Number of Contours = 600
   Show Numbers = Off
   Specular Lighting = On
   Surface Drawing = Smooth Shading
@@ -67,9 +67,9 @@ DATA READER:
   Construct Variables From Fourier Coefficients = True
   Current Case List = Case Nozzle a COARSE
   Current Case Name = W:\AAE412\Project\Git\ANSYS_Files\NozzleA\NozzleA_files\\
-dp0\FFF-4\Fluent\FFF-4.1-11-02000.dat.gz
+dp0\FFF-4\Fluent\FFF-4.1-13-01000.dat.gz
   Current Results File = W:\AAE412\Project\Git\ANSYS_Files\NozzleA\\
-NozzleA_files\dp0\FFF-4\Fluent\FFF-4.1-11-02000.dat.gz
+NozzleA_files\dp0\FFF-4\Fluent\FFF-4.1-13-01000.dat.gz
   Current Timestep = -1
   Current Timevalue = 0
   Edit Case Names = false
@@ -97,9 +97,9 @@ NozzleA_files\dp0\FFF-4\Fluent\FFF-4.1-11-02000.dat.gz
   CASE:Case Nozzle a COARSE
     Construct Variables From Fourier Coefficients = True
     Current Case Name = W:\AAE412\Project\Git\ANSYS_Files\NozzleA\\
-NozzleA_files\dp0\FFF-4\Fluent\FFF-4.1-11-02000.dat.gz
+NozzleA_files\dp0\FFF-4\Fluent\FFF-4.1-13-01000.dat.gz
     Current Results File = W:\AAE412\Project\Git\ANSYS_Files\NozzleA\\
-NozzleA_files\dp0\FFF-4\Fluent\FFF-4.1-11-02000.dat.gz
+NozzleA_files\dp0\FFF-4\Fluent\FFF-4.1-13-01000.dat.gz
     Current Timestep = -1
     Current Timevalue = 0
     File Angle Units = rad
@@ -339,9 +339,10 @@ NozzleA_files\dp0\FFF-4\Fluent\FFF-4.1-11-02000.dat.gz
     END
     DOMAIN:solid surface_body
       Angle Definition Method = Instances in 360
-      Apply Reflection = false
-      Apply Rotation = true
-      Apply Translation = false
+      Apply Reflection = On
+      Apply Rotation = On
+      Apply Translation = Off
+      Axis = X
       Axis From File = Custom
       Background Mesh Density = 2000
       Background Mesh Generation Method = Quasi Orthogonal
@@ -362,18 +363,18 @@ NozzleA_files\dp0\FFF-4\Fluent\FFF-4.1-11-02000.dat.gz
       Number of Passages in Component = 1
       Outlet Curve Mode = From Turbo Region
       Principal Axis = Z
-      Reflection Plane Option = From Plane
+      Reflection Plane Option = ZX Plane
       Rotation Angle = 0 [degree]
-      Rotation Axis From = 0.0, 0.0, 0.0
-      Rotation Axis To = 1.0, 0.0, 0.0
+      Rotation Axis From = 0 [m], 0 [m], 0 [m]
+      Rotation Axis To = 1 [m], 0 [m], 0 [m]
       Rotation Axis Type = Principal Axis
       Shroud Curve Mode = From Turbo Region
       TBR User Theta Correction = 0.0
       Translation Vector = 0.0, 0.0, 0.0
       Turbo 360 Case without Periodics = false
-      X = 0.0
-      Y = 0.0
-      Z = 0.0
+      X = 0.0 [m]
+      Y = 0.0 [m]
+      Z = 0.0 [m]
     END
   END
 END
@@ -428,7 +429,7 @@ DEFAULT LEGEND:Default Legend View 2
   Legend Aspect = 0.07
   Legend Format = %10.3e
   Legend Orientation = Vertical
-  Legend Plot = /CONTOUR:Mach
+  Legend Plot = /LINE:End
   Legend Position = 0.02, 0.15
   Legend Resolution = 256
   Legend Shading = Smooth
@@ -451,7 +452,7 @@ DEFAULT LEGEND:Default Legend View 3
   Legend Aspect = 0.07
   Legend Format = %10.3e
   Legend Orientation = Vertical
-  Legend Plot = /CONTOUR:Mach
+  Legend Plot = /LINE:End
   Legend Position = 0.02, 0.15
   Legend Resolution = 256
   Legend Shading = Smooth
@@ -474,7 +475,7 @@ DEFAULT LEGEND:Default Legend View 4
   Legend Aspect = 0.07
   Legend Format = %10.3e
   Legend Orientation = Vertical
-  Legend Plot = /CONTOUR:Mach
+  Legend Plot = /LINE:End
   Legend Position = 0.02, 0.15
   Legend Resolution = 256
   Legend Shading = Smooth
@@ -502,7 +503,7 @@ END
 HARDCOPY:
   Antialiasing = On
   Hardcopy Filename = W:/AAE412/Project/Git/ANSYS_Files/\
-Eyeball_Boundary_Layer.png
+Eyeball_Boundary_Layer_New.png
   Hardcopy Format = png
   Hardcopy Tolerance = 0.0001
   Image Height = 600
@@ -532,6 +533,45 @@ LIBRARY:
     END
   END
 END
+LINE:End
+  Apply Instancing Transform = On
+  Colour = 1, 1, 0
+  Colour Map = Default Colour Map
+  Colour Mode = Constant
+  Colour Scale = Linear
+  Colour Variable = Pressure
+  Colour Variable Boundary Values = Conservative
+  Domain List = /DOMAIN GROUP:All Domains
+  Draw Lines = Off
+  Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+  Line Samples = 10
+  Line Type = Sample
+  Line Width = 2
+  Max = 0.0 [Pa]
+  Min = 0.0 [Pa]
+  Option = Two Points
+  Point 1 = 2.069 [m], 0.0375 [m], 0 [m]
+  Point 2 = 2.069 [m], 0.0175 [m], 0 [m]
+  Range = Global
+  Visibility = On
+  OBJECT VIEW TRANSFORM:
+    Apply Reflection = Off
+    Apply Rotation = Off
+    Apply Scale = Off
+    Apply Translation = Off
+    Principal Axis = Z
+    Reflection Plane Option = XY Plane
+    Rotation Angle = 0.0 [degree]
+    Rotation Axis From = 0 [m], 0 [m], 0 [m]
+    Rotation Axis To = 0 [m], 0 [m], 0 [m]
+    Rotation Axis Type = Principal Axis
+    Scale Vector = 1 , 1 , 1
+    Translation Vector = 0 [m], 0 [m], 0 [m]
+    X = 0.0 [m]
+    Y = 0.0 [m]
+    Z = 0.0 [m]
+  END
+END
 LINE:Line 1
   Apply Instancing Transform = On
   Colour = 1, 1, 0
@@ -549,8 +589,8 @@ LINE:Line 1
   Max = 0.0 [Pa]
   Min = 0.0 [Pa]
   Option = Two Points
-  Point 1 = 0.07 [m], 0.0375 [m], 0 [m]
-  Point 2 = 0.07 [m], 0.0355 [m], 0 [m]
+  Point 1 = 0.86 [m], 0.0375 [m], 0 [m]
+  Point 2 = 0.86 [m], 0.0175 [m], 0 [m]
   Range = Global
   Visibility = On
   OBJECT VIEW TRANSFORM:
@@ -1001,17 +1041,17 @@ VIEW:View 1
   Is A Figure = false
   Light Angle = 50, 110
   Object Visibility List = /CONTOUR:Mach,/DEFAULT LEGEND:Default Legend View 1,\
-/LINE:Line 1,/WIREFRAME:Wireframe
+/LINE:End,/LINE:Line 1,/WIREFRAME:Wireframe
   Projection = Orthographic
   Ruler Visibility = true
   Standard View = Isometric Y
   CAMERA:
     Option = Pivot Point and Quaternion
-    Pan = -0.0288266,0.0417385
-    Pivot Point = -0.171435,0.249326,0
+    Pan = -0.381783,-0.044911
+    Pivot Point = 0.532065,0,0
     Rotation = -90, 0, 0
     Rotation Quaternion = 0,0,0,1
-    Scale = 2.66175
+    Scale = 11.5694
     Send To Viewer = True
   END
 END

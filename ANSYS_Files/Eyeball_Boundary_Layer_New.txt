@@ -1,0 +1,5 @@
+For NPR=2.2:
+End of Pipe is at x=2.069m
+Line is at x=0.86m
+
+Boundary Layer is 20mm thick at pipe length of 1.209m. Setting pipe length to 1.21m for future.

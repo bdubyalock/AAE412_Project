@@ -1,7 +1,7 @@
 <FluentXMLReport>
 <version>
 Fluent
-Version: 2d, dp, pbns, lam (2d, double precision, pressure-based, laminar)
+Version: axi, dp, dbns imp, ske (axi, double precision, density-based implicit, standard k-epsilon)
 Release: 19.4.0
 Title: 
 </version>
@@ -11,21 +11,22 @@ Title:
 Models
 ------
 
-   Model                        Settings   
-   -------------------------------------
-   Space                        2D         
-   Time                         Steady     
-   Viscous                      Laminar    
-   Heat Transfer                Enabled    
-   Solidification and Melting   Disabled   
-   Radiation                    None       
-   Species                      Disabled   
-   Coupled Dispersed Phase      Disabled   
-   NOx Pollutants               Disabled   
-   SOx Pollutants               Disabled   
-   Soot                         Disabled   
-   Mercury Pollutants           Disabled   
-   Structure                    Disabled   
+   Model                        Settings                              
+   ----------------------------------------------------------------
+   Space                        Axisymmetric                          
+   Time                         Steady                                
+   Viscous                      Standard k-epsilon turbulence model   
+   Wall Treatment               Standard Wall Functions               
+   Heat Transfer                Enabled                               
+   Solidification and Melting   Disabled                              
+   Radiation                    None                                  
+   Species                      Disabled                              
+   Coupled Dispersed Phase      Disabled                              
+   NOx Pollutants               Disabled                              
+   SOx Pollutants               Disabled                              
+   Soot                         Disabled                              
+   Mercury Pollutants           Disabled                              
+   Structure                    Disabled                              
 
 </Models>
 
@@ -35,15 +36,15 @@ Material Properties
 
    Material: air (fluid)
 
-      Property                        Units     Method     Value(s)     
-      ---------------------------------------------------------------
-      Density                         kg/m3     constant   1.225        
-      Cp (Specific Heat)              j/kg-k    constant   1006.43      
-      Thermal Conductivity            w/m-k     constant   0.0242       
-      Viscosity                       kg/m-s    constant   1.7894e-05   
-      Molecular Weight                kg/kmol   constant   28.966       
-      Thermal Expansion Coefficient   1/k       constant   0            
-      Speed of Sound                  m/s       none       #f           
+      Property                        Units     Method      Value(s)     
+      ----------------------------------------------------------------
+      Density                         kg/m3     ideal-gas   #f           
+      Cp (Specific Heat)              j/kg-k    constant    1006.43      
+      Thermal Conductivity            w/m-k     constant    0.0242       
+      Viscosity                       kg/m-s    constant    1.7894e-05   
+      Molecular Weight                kg/kmol   constant    28.966       
+      Thermal Expansion Coefficient   1/k       constant    0            
+      Speed of Sound                  m/s       none        #f           
 
    Material: aluminum (solid)
 
@@ -81,36 +82,42 @@ Boundary Conditions
 
    Zones
 
-      name           id   type              
-      -----------------------------------
-      flowinlet      6    pressure-inlet    
-      farfield       9    pressure-outlet   
-      ambientinlet   7    pressure-inlet    
-      nozzlewall     8    wall              
-      axis           10   axis              
+      name           id   type                 
+      --------------------------------------
+      farfield       9    pressure-far-field   
+      ambientinlet   7    velocity-inlet       
+      flowinlet      6    pressure-inlet       
+      nozzlewall     8    wall                 
+      axis           10   axis                 
 
    Setup Conditions
 
-      flowinlet
-
-         Condition                        Value   
-         --------------------------------------
-         Gauge Total Pressure (pascal)    70000   
-         Direction Specification Method   0       
-         X-Component of Flow Direction    -1      
-
       farfield
 
-         Condition   Value   
-         -----------------
+         Condition                           Value   
+         -----------------------------------------
+         Gauge Pressure (pascal)             5       
+         Mach Number                         0.2     
+         Axial-Component of Flow Direction   -1      
 
       ambientinlet
 
-         Condition                        Value   
-         --------------------------------------
-         Gauge Total Pressure (pascal)    100     
-         Direction Specification Method   0       
-         X-Component of Flow Direction    -1      
+         Condition                                    Value   
+         --------------------------------------------------
+         Velocity Specification Method                0       
+         Velocity Magnitude (m/s)                     10      
+         Supersonic/Initial Gauge Pressure (pascal)   5       
+         Axial-Component of Flow Direction            -1      
+
+      flowinlet
+
+         Condition                                    Value    
+         ---------------------------------------------------
+         Gauge Total Pressure (pascal)                121590   
+         Supersonic/Initial Gauge Pressure (pascal)   121590   
+         Direction Specification Method               0        
+         Axial-Component of Flow Direction            -1       
+         Turbulent Intensity (%)                      0        
 
       nozzlewall
 
@@ -133,10 +140,10 @@ Solver Settings
 
    Equations
 
-      Equation   Solved   
-      -----------------
-      Flow       yes      
-      Energy     yes      
+      Equation     Solved   
+      -------------------
+      Flow         yes      
+      Turbulence   yes      
 
    Numerics
 
@@ -146,46 +153,47 @@ Solver Settings
 
    Relaxation
 
-      Variable      Relaxation Factor   
-      -------------------------------
-      Pressure      0.3                 
-      Density       1                   
-      Body Forces   1                   
-      Momentum      0.7                 
-      Energy        1                   
+      Variable                     Relaxation Factor   
+      ----------------------------------------------
+      Turbulent Kinetic Energy     0.75                
+      Turbulent Dissipation Rate   0.75                
+      Turbulent Viscosity          1                   
 
    Linear Solver
 
-                   Solver     Termination   Residual Reduction   
-      Variable     Type       Criterion     Tolerance            
-      --------------------------------------------------------
-      Pressure     V-Cycle    0.1                                
-      X-Momentum   Flexible   0.1           0.7                  
-      Y-Momentum   Flexible   0.1           0.7                  
-      Energy       F-Cycle    0.1                                
-
-   Pressure-Velocity Coupling
-
-      Parameter   Value    
-      ------------------
-      Type        SIMPLE   
+                                   Solver    Termination   Residual Reduction   
+      Variable                     Type      Criterion     Tolerance            
+      -----------------------------------------------------------------------
+      Flow                         F-Cycle   0.1                                
+      Turbulent Kinetic Energy     F-Cycle   0.1                                
+      Turbulent Dissipation Rate   F-Cycle   0.1                                
 
    Discretization Scheme
 
-      Variable   Scheme                
-      ------------------------------
-      Pressure   Second Order          
-      Momentum   Second Order Upwind   
-      Energy     Second Order Upwind   
+      Variable                     Scheme                
+      ------------------------------------------------
+      Flow                         Second Order Upwind   
+      Turbulent Kinetic Energy     First Order Upwind    
+      Turbulent Dissipation Rate   First Order Upwind    
+
+   Time Marching
+
+      Parameter        Value      
+      -------------------------
+      Solver           Implicit   
+      Courant Number   5          
 
    Solution Limits
 
-      Quantity                    Limit   
-      ---------------------------------
-      Minimum Absolute Pressure   1       
-      Maximum Absolute Pressure   5e+10   
-      Minimum Temperature         1       
-      Maximum Temperature         5000    
+      Quantity                         Limit    
+      ---------------------------------------
+      Minimum Absolute Pressure        1        
+      Maximum Absolute Pressure        5e+10    
+      Minimum Temperature              1        
+      Maximum Temperature              5000     
+      Minimum Turb. Kinetic Energy     1e-14    
+      Minimum Turb. Dissipation Rate   1e-20    
+      Maximum Turb. Viscosity Ratio    100000   
 
 </SolverSettings>
 

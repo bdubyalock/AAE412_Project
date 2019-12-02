@@ -1,10 +1,10 @@
 ﻿dp0/FFF-5/DM/FFF-5.agdb
-dp0/FFF-5/Fluent/FFF-5-4-01000.dat.gz
-dp0/FFF-5/Fluent/FFF-5-4.cas.gz
-dp0/FFF-5/Fluent/FFF-5-Setup-Output.cas.gz
-dp0/FFF-5/Fluent/FFF-5.2.set
+dp0/FFF-5/Fluent/FFF-5.1-6-00023.dat.gz
+dp0/FFF-5/Fluent/FFF-5.1-6.cas.gz
+dp0/FFF-5/Fluent/FFF-5.1-Setup-Output.cas.gz
+dp0/FFF-5/Fluent/FFF-5.1.set
 dp0/FFF-5/Fluent/FFF-5.ip
-dp0/FFF-5/MECH/FFF-5.msh
+dp0/FFF-5/MECH/FFF-5.1.msh
 dp0/FFF-6/Fluent/FFF-6-1-00000.dat.gz
 dp0/FFF-6/Fluent/FFF-6-1.cas.gz
 dp0/FFF-6/Fluent/FFF-6-Setup-Output.cas.gz
@@ -17,7 +17,6 @@ dp0/designPoint.wbdp
 progress_files/dp0/FFF-5/Fluent/contour-1.png
 progress_files/dp0/FFF-5/Fluent/report.xml
 progress_files/dp0/FFF-5/Fluent/Solution.trn
-progress_files/dp0/FFF-5/Fluent/SolutionMonitor.gz
 progress_files/dp0/FFF-6/Fluent/Solution.trn
 session_files/journal1.wbjn
 session_files/journal10.wbjn
@@ -39,12 +38,10 @@ dp0/global/
 dp0/FFF-5/DM/
 dp0/FFF-5/Fluent/
 dp0/FFF-5/MECH/
-dp0/FFF-5/Post/
 dp0/FFF-6/Fluent/
 dp0/FFF-6/MECH/
 dp0/global/MECH/
 dp0/global/MECH/FFF-5/
-dp0/global/MECH/FFF-6/
 progress_files/dp0/
 progress_files/dp0/FFF-5/
 progress_files/dp0/FFF-6/
