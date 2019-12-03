@@ -48,15 +48,10 @@ progress_files/
 session_files/
 dp0/FFF-4/
 dp0/FFF-5/
-dp0/global/
-dp0/FFF-4/DM/
 dp0/FFF-4/Fluent/
-dp0/FFF-4/MECH/
 dp0/FFF-4/Post/
 dp0/FFF-5/Fluent/
-dp0/FFF-5/MECH/
 dp0/FFF-5/Post/
-dp0/global/MECH/
 progress_files/dp0/
 progress_files/dp0/FFF-4/
 progress_files/dp0/FFF-5/
