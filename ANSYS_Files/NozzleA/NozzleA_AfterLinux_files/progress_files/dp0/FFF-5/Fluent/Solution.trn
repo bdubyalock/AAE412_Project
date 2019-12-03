@@ -1,0 +1,284 @@
+
+Build Time: Apr 16 2019 10:59:31 
+Executable Path: C:/PROGRA~1/ANSYSI~1/v194/fluent/ntbin/win64/fluent.exe
+
+-------------------------------------------------------------------------------
+ID    Hostname        Core  O.S.         PID    Vendor                    
+-------------------------------------------------------------------------------
+n0*   X-ARMS2106PC63  1/12  Windows-x64  9328   Intel(R) Core(TM) i7-8700 
+host  X-ARMS2106PC63        Windows-x64  11760  Intel(R) Core(TM) i7-8700 
+
+MPI Option Selected: ibmmpi
+Selected system interconnect: default
+-------------------------------------------------------------------------------
+Warning: Ignoring WB preference save-post-processing-images
+Multicore SMT processors detected. Processor affinity set!
+Reading "W:\AAE412\Project\Git\ANSYS_Files\NozzleA\NozzleA_files\dp0\FFF-5\MECH\FFF-5.1.msh"...
+Buffering for file scan...
+
+   90703 nodes, binary.
+    1796 nodes, binary.
+  181822 2D interior faces, zone  1, binary.
+     480 2D interior faces, zone  2, binary.
+     200 2D velocity-inlet faces, zone  6, binary.
+     498 2D wall faces, zone  7, binary.
+     600 2D axis faces, zone  8, binary.
+      80 2D velocity-inlet faces, zone  9, binary.
+     418 2D wall faces, zone 10, binary.
+   91600 quadrilateral cells, zone  3, binary.
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+     zones,
+	nozzlewall
+	flowinlet
+	axis
+	farfield
+	ambientinlet
+	solid-surface_body
+	surface_body
+	interior-surface_body
+     parallel,
+Done.
+
+Preparing mesh for display...
+Warning: The use of axis boundary conditions is not appropriate for
+         a 2D/3D flow problem. Please consider changing the zone
+         type to symmetry or wall, or the problem to axisymmetric.
+
+Warning: The use of axis boundary conditions is not appropriate for
+         a 2D/3D flow problem. Please consider changing the zone
+         type to symmetry or wall, or the problem to axisymmetric.
+
+Done.
+
+Writing Settings file "W:\AAE412\Project\Git\ANSYS_Files\NozzleA\NozzleA_files\dp0\FFF-5\Fluent\FFF-5.1.set"...
+	writing rp variables ... Done.
+	writing domain variables ... Done.
+	writing solid-surface_body (type fluid) (mixture) ... Done.
+	writing interior-surface_body (type interior) (mixture) ... Done.
+	writing surface_body (type interior) (mixture) ... Done.
+	writing ambientinlet (type velocity-inlet) (mixture) ... Done.
+	writing farfield (type wall) (mixture) ... Done.
+	writing axis (type axis) (mixture) ... Done.
+	writing flowinlet (type velocity-inlet) (mixture) ... Done.
+	writing nozzlewall (type wall) (mixture) ... Done.
+	writing zones map name-id ... Done.
+Warning: The use of axis boundary conditions is not appropriate for
+         a 2D/3D flow problem. Please consider changing the zone
+         type to symmetry or wall, or the problem to axisymmetric.
+
+"Updating Setup cell..."
+"Updating Solution cell..."
+Initialization based on settings...
+
+Initialize using the hybrid initialization method.
+
+Checking case topology... 
+-This case has only inlets 
+-Case will be initialized with constant parameters
+
+Hybrid initialization is done.
+Writing data to W:\\AAE412\\Project\\Git\\ANSYS_Files\\NozzleA\\NozzleA_files\\dp0\\FFF-5\\Fluent\\FFF-5.1.ip ...
+	x-coord
+	y-coord
+	pressure
+	x-velocity
+	y-velocity
+	hyb_init-0
+	hyb_init-1
+Done.
+("Unable to update solution. Number of iterations should be greater than zero.")
+
+Error: Unable to update solution. Number of iterations should be greater than zero.
+Error Object: #f
+Writing "| gzip -2cf > FFF-5.1-Setup-Output.cas.gz"...
+Writing temporary file C:\\Users\\lockb\\AppData\\Local\\Temp\\flntgz-117602 ...
+   91600 quadrilateral cells, zone  3, binary.
+  181822 2D interior faces, zone  1, binary.
+     480 2D interior faces, zone  2, binary.
+     200 2D velocity-inlet faces, zone  6, binary.
+     498 2D wall faces, zone  7, binary.
+     600 2D axis faces, zone  8, binary.
+      80 2D velocity-inlet faces, zone  9, binary.
+     418 2D wall faces, zone 10, binary.
+   92499 nodes, binary.
+   92499 node flags, binary.
+Done.
+
+Writing "| gzip -2cf > FFF-5.1-1.cas.gz"...
+Writing temporary file C:\\Users\\lockb\\AppData\\Local\\Temp\\flntgz-117603 ...
+   91600 quadrilateral cells, zone  3, binary.
+  181822 2D interior faces, zone  1, binary.
+     480 2D interior faces, zone  2, binary.
+     200 2D velocity-inlet faces, zone  6, binary.
+     498 2D wall faces, zone  7, binary.
+     600 2D axis faces, zone  8, binary.
+      80 2D velocity-inlet faces, zone  9, binary.
+     418 2D wall faces, zone 10, binary.
+   92499 nodes, binary.
+   92499 node flags, binary.
+Done.
+
+Writing "| gzip -2cf > FFF-5.1-1-00000.dat.gz"...
+Writing temporary file C:\\Users\\lockb\\AppData\\Local\\Temp\\flntgz-117604 ...
+Done.
+
+
+Performance Timer for 0 iterations on 1 compute node
+  Average wall-clock time per iteration:              0.000 sec
+  Global reductions per iteration:                        0 ops
+  Global reductions time per iteration:               0.000 sec (0.0%)
+  Message count per iteration:                            0 messages
+  Data transfer per iteration:                        0.000 MB
+  LE solves per iteration:                                0 solves
+  LE wall-clock time per iteration:                   0.000 sec (0.0%)
+  LE global solves per iteration:                         0 solves
+  LE global wall-clock time per iteration:            0.000 sec (0.0%)
+  LE global matrix maximum size:                         0
+  AMG cycles per iteration:                           0.000 cycles
+  Relaxation sweeps per iteration:                        0 sweeps
+  Relaxation exchanges per iteration:                     0 exchanges
+  LE early protections (stall) per iteration:           0.000 times
+  LE early protections (divergence) per iteration:      0.000 times
+
+  Total wall-clock time:                              0.000 sec
+
+
+Transcript file has been opened in append mode. Time stamp=Mon Dec  2 21:13:00 2019.
+
+Build Time: Apr 16 2019 10:49:06 
+Executable Path: C:/PROGRA~1/ANSYSI~1/v194/fluent/ntbin/win64/fluent.exe
+
+-------------------------------------------------------------------------------
+ID    Hostname        Core  O.S.         PID    Vendor                   
+-------------------------------------------------------------------------------
+n7    X-ARMS2106PC44  8/8  Windows-x64  5344   Intel(R) Xeon(R) E3-1240 
+n6    X-ARMS2106PC44  7/8  Windows-x64  1364   Intel(R) Xeon(R) E3-1240 
+n5    X-ARMS2106PC44  6/8  Windows-x64  10136  Intel(R) Xeon(R) E3-1240 
+n4    X-ARMS2106PC44  5/8  Windows-x64  7128   Intel(R) Xeon(R) E3-1240 
+n3    X-ARMS2106PC44  4/8  Windows-x64  8772   Intel(R) Xeon(R) E3-1240 
+n2    X-ARMS2106PC44  3/8  Windows-x64  8408   Intel(R) Xeon(R) E3-1240 
+n1    X-ARMS2106PC44  2/8  Windows-x64  8424   Intel(R) Xeon(R) E3-1240 
+n0*   X-ARMS2106PC44  1/8  Windows-x64  100    Intel(R) Xeon(R) E3-1240 
+host  X-ARMS2106PC44       Windows-x64  5104   Intel(R) Xeon(R) E3-1240 
+
+MPI Option Selected: ibmmpi
+Selected system interconnect: default
+-------------------------------------------------------------------------------
+Warning: Ignoring WB preference save-post-processing-images
+Reading "W:\AAE412\Project\Git\ANSYS_Files\NozzleA\Run_In_Linux\NozzleA_Fine.2.cas"...
+Buffering for file scan...
+
+
+
+  234720 quadrilateral cells, zone  3, binary.
+Warning: reading 16 partition grid onto 8 compute node machine;
+         will auto partition.
+  234720 cell partition ids, zone  3, 16 partitions, binary.
+  466273 2D interior faces, zone  1, binary.
+     480 2D interior faces, zone  2, binary.
+     200 2D pressure-inlet faces, zone  6, binary.
+     498 2D pressure-far-field faces, zone  7, binary.
+    2389 2D axis faces, zone  8, binary.
+      80 2D pressure-inlet faces, zone  9, binary.
+    2207 2D wall faces, zone 10, binary.
+  237408 nodes, binary.
+237408 node flags, binary.
+
+Building...
+     mesh
+	auto partitioning mesh by Metis (fast),
+	distributing mesh
+		parts........,
+		faces........,
+		nodes........,
+		cells........,
+        bandwidth reduction using Reverse Cuthill-McKee: 26792/151 = 177.43
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	nozzlewall
+	axis
+	surface_body
+	interior-surface_body
+	ambientinlet
+	flowinlet
+	farfield
+	solid-surface_body
+     parallel,
+Done.
+
+Preparing mesh for display...
+Done.
+
+Writing Settings file "W:\AAE412\Project\Git\ANSYS_Files\NozzleA\NozzleA_AfterLinux_files\dp0\FFF-5\Fluent\NozzleA_Fine.2.set"...
+	writing rp variables ... Done.
+	writing domain variables ... Done.
+	writing solid-surface_body (type fluid) (mixture) ... Done.
+	writing farfield (type pressure-far-field) (mixture) ... Done.
+	writing flowinlet (type pressure-inlet) (mixture) ... Done.
+	writing ambientinlet (type pressure-inlet) (mixture) ... Done.
+	writing interior-surface_body (type interior) (mixture) ... Done.
+	writing surface_body (type interior) (mixture) ... Done.
+	writing axis (type axis) (mixture) ... Done.
+	writing nozzlewall (type wall) (mixture) ... Done.
+	writing zones map name-id ... Done.
+Reading "W:\AAE412\Project\Git\ANSYS_Files\NozzleA\NozzleA_AfterLinux_files\dp0\FFF-5\Fluent\NozzleA_Fine.2.dat"...
+
+
+Parallel variables...
+Done.
+
+  iter  continuity  x-velocity  y-velocity      energy           k       omega     time/iter
+ 19969  9.8772e-04  2.2389e-04  4.1591e-04  9.7503e-04  4.7475e-06  5.9598e-06  0:00:00   31
+ 19970  2.2085e-03  2.3347e-04  6.3117e-04  2.1909e-03  4.7493e-06  5.9524e-06  0:00:30   30
+ 19971  1.7886e-03  2.3081e-04  4.2991e-04  1.7731e-03  4.7510e-06  5.9542e-06  0:00:23   29
+ 19972  1.5966e-03  2.2814e-04  6.9842e-04  1.5823e-03  4.7527e-06  5.9464e-06  0:00:18   28
+ 19973  1.6444e-03  2.2799e-04  4.2374e-04  1.6297e-03  4.7543e-06  5.9447e-06  0:00:19   27
+ 19974  1.2331e-03  2.2598e-04  4.0297e-04  1.2200e-03  4.7560e-06  5.9367e-06  0:00:20   26
+!19975 solution is converged
+ 19975  9.8117e-04  2.2467e-04  3.8420e-04  9.6867e-04  4.7577e-06  5.9365e-06  0:00:15   25
+Writing "| gzip -2cf > SolutionMonitor.gz"...
+Writing temporary file C:\\Users\\lockb\\AppData\\Local\\Temp\\flntgz-51042 ...
+Done.
+
+Writing data to W:\\AAE412\\Project\\Git\\ANSYS_Files\\NozzleA\\NozzleA_AfterLinux_files\\dp0\\FFF-5\\Fluent\\NozzleA_Fine.2.ip ...
+	x-coord
+	y-coord
+	pressure
+	x-velocity
+	y-velocity
+	temperature
+	k
+	omega
+Done.
+Writing "| gzip -2cf > NozzleA_Fine.2-5-19975.dat.gz"...
+Writing temporary file C:\\Users\\lockb\\AppData\\Local\\Temp\\flntgz-51043 ...
+Done.
+
+
+Performance Timer for 6 iterations on 8 compute nodes
+  Average wall-clock time per iteration:              0.448 sec
+  Global reductions per iteration:                      103 ops
+  Global reductions time per iteration:               0.000 sec (0.0%)
+  Message count per iteration:                         2132 messages
+  Data transfer per iteration:                        2.079 MB
+  LE solves per iteration:                                3 solves
+  LE wall-clock time per iteration:                   0.180 sec (40.0%)
+  LE global solves per iteration:                         1 solves
+  LE global wall-clock time per iteration:            0.000 sec (0.0%)
+  LE global matrix maximum size:                        27
+  AMG cycles per iteration:                           3.000 cycles
+  Relaxation sweeps per iteration:                      113 sweeps
+  Relaxation exchanges per iteration:                     0 exchanges
+  LE early protections (stall) per iteration:           0.000 times
+  LE early protections (divergence) per iteration:      0.000 times
+
+  Total wall-clock time:                              2.691 sec
+

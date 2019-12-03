@@ -1,0 +1,5 @@
+file/read-case NozzleA_Fine.cas
+file/read-data NozzleA_Fine.dat
+it 50000
+file/write-case-data NozzleA_Fine.2
+exit

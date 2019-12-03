@@ -36,6 +36,7 @@ session_files/journal10.wbjn
 session_files/journal11.wbjn
 session_files/journal12.wbjn
 session_files/journal13.wbjn
+session_files/journal13_crashed.wbjn
 session_files/journal2.wbjn
 session_files/journal3.wbjn
 session_files/journal4.wbjn
@@ -58,6 +59,8 @@ dp0/FFF-5/Fluent/
 dp0/FFF-5/MECH/
 dp0/FFF-5/Post/
 dp0/global/MECH/
+dp0/global/MECH/FFF-4/
+dp0/global/MECH/FFF-5/
 progress_files/dp0/
 progress_files/dp0/FFF-4/
 progress_files/dp0/FFF-5/

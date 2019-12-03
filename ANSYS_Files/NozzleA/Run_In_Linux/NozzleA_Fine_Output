@@ -1,0 +1,158 @@
+/package/ansys/2019R2/v194/fluent/fluent19.4.0/bin/fluent -r19.4.0 -g -v2ddp -t16
+/package/ansys/2019R2/v194/fluent/fluent19.4.0/cortex/lnamd64/cortex.19.4.0 -f fluent -g (fluent "2ddp -pshmem  -host -r19.4.0 -t16 -mpi=ibmmpi -path/package/ansys/2019R2/v194/fluent -ssh")
+/package/ansys/2019R2/v194/fluent/fluent19.4.0/bin/fluent -r19.4.0 2ddp -pshmem -host -t16 -mpi=ibmmpi -path/package/ansys/2019R2/v194/fluent -ssh -cx thrust.ecn.purdue.edu:41609:36963
+Starting /package/ansys/2019R2/v194/fluent/fluent19.4.0/lnamd64/2ddp_host/fluent.19.4.0 host -cx thrust.ecn.purdue.edu:41609:36963 "(list (rpsetvar (QUOTE parallel/function) "fluent 2ddp -flux -node -r19.4.0 -t16 -pshmem -mpi=ibmmpi -ssh") (rpsetvar (QUOTE parallel/rhost) "") (rpsetvar (QUOTE parallel/ruser) "") (rpsetvar (QUOTE parallel/nprocs_string) "16") (rpsetvar (QUOTE parallel/auto-spawn?) #t) (rpsetvar (QUOTE parallel/trace-level) 0) (rpsetvar (QUOTE parallel/remote-shell) 1) (rpsetvar (QUOTE parallel/path) "/package/ansys/2019R2/v194/fluent") (rpsetvar (QUOTE parallel/hostsfile) "") )"
+
+              Welcome to ANSYS Fluent 2019 R2
+
+              Copyright 1987-2019 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: Apr 17 2019 13:39:04 EDT  Build Id: 10133  
+ 
+
+######################################################################
+            WARNING: License for fluent will expire in 12 days.
+            Please contact your distributor for renewal.
+######################################################################
+
+     --------------------------------------------------------------
+     This is an academic version of ANSYS FLUENT. Usage of this product
+     license is limited to the terms and conditions specified in your ANSYS
+     license form, additional terms section.
+     --------------------------------------------------------------
+Host spawning Node 0 on machine "thrust.ecn.purdue.edu" (unix).
+/package/ansys/2019R2/v194/fluent/fluent19.4.0/bin/fluent -r19.4.0 2ddp -flux -node -t16 -pshmem -mpi=ibmmpi -ssh -mport 128.46.32.74:128.46.32.74:47087:0
+Starting /package/ansys/2019R2/v194/fluent/fluent19.4.0/multiport/mpi/lnamd64/ibmmpi/bin/mpirun -e MPI_IBV_NO_FORK_SAFE=1 -e MPI_USE_MALLOPT_MMAP_MAX=0 -np 16 /package/ansys/2019R2/v194/fluent/fluent19.4.0/lnamd64/2ddp_node/fluent_mpi.19.4.0 node -mpiw ibmmpi -pic shmem -mport 128.46.32.74:128.46.32.74:47087:0
+
+-----------------------------------------------------------------------------------------
+ID     Hostname              Core   O.S.      PID            Vendor                     
+-----------------------------------------------------------------------------------------
+n0-15  thrust.ecn.purdue.ed  16/24  Linux-64  163892-163907  Intel(R) Xeon(R) Gold 6126 
+host   thrust.ecn.purdue.ed         Linux-64  163634         Intel(R) Xeon(R) Gold 6126 
+
+MPI Option Selected: ibmmpi
+Selected system interconnect: shared-memory
+-----------------------------------------------------------------------------------------
+
+
+ +------------------------------------------------------------------+
+ |                    ANSYS Product Improvement                     |
+ |                                                                  |
+ |   ANSYS Product Improvement Program helps improve ANSYS          |
+ |   products. Participating in this program is like filling out a  |
+ |   survey. Without interrupting your work, the software reports   |
+ |   anonymous usage information such as errors, machine and        |
+ |   solver statistics, features used, etc. to ANSYS. We never      |
+ |   use the data to identify or contact you.                       |
+ |   The data does NOT contain:                                     |
+ |   - Any personally identifiable information including names,     |
+ |     IP addresses, file names, part names, etc.                   |
+ |   - Any information about your geometry or design specific       |
+ |     inputs.                                                      |
+ |   You can stop participation at any time. To change your         |
+ |   selection go to Help >> ANSYS Product Improvement Program      |
+ |   in the GUI.                                                    |
+ |   For more information about the ANSYS Privacy Policy, please    |
+ |   check: http://www.ansys.com/privacy                            |
+ |                                                                  |
+ +------------------------------------------------------------------+
+
+> WARNING: Rank:0 Machine thrust.ecn.purdue.edu has 44 % of RAM filled with file buffer caches.
+This can cause potential performance issues. Please use -cflush flag to flush the cache. 
+(In case of any trouble with that, try the TUI/Scheme command '(flush-cache)'.)
+
+
+Multicore processors detected. Processor affinity set!
+
+Reading "\"| gunzip -c \\\"NozzleA_Fine.cas.gz\\\"\""...
+
+Buffering for file scan...
+
+
+
+  234720 quadrilateral cells, zone  3, binary.
+Warning: reading 8 partition grid onto 16 compute node machine;
+         will auto partition.
+  234720 cell partition ids, zone  3, 8 partitions, binary.
+  466273 2D interior faces, zone  1, binary.
+     480 2D interior faces, zone  2, binary.
+     200 2D pressure-inlet faces, zone  6, binary.
+     498 2D pressure-far-field faces, zone  7, binary.
+    2389 2D axis faces, zone  8, binary.
+      80 2D pressure-inlet faces, zone  9, binary.
+    2207 2D wall faces, zone 10, binary.
+  237408 nodes, binary.
+237408 node flags, binary.
+
+Building...
+     mesh
+	auto partitioning mesh by Metis (fast),
+	distributing mesh
+		parts................,
+		faces................,
+		nodes................,
+		cells................,
+        bandwidth reduction using Reverse Cuthill-McKee: 13077/127 = 102.969
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	nozzlewall
+	axis
+	surface_body
+	interior-surface_body
+	ambientinlet
+	flowinlet
+	farfield
+	solid-surface_body
+     parallel,
+Done.
+
+> 
+Reading "\"| gunzip -c \\\"NozzleA_Fine.dat.gz\\\"\""...
+
+
+
+Parallel variables...
+Done.
+
+> plot-residuals: no graphics functions available.
+
+  iter  continuity  x-velocity  y-velocity      energy           k       omega     time/iter
+!19963 solution is converged
+ 19963  9.9458e-04  2.2438e-04  4.4590e-04  9.8173e-04  4.7375e-06  5.9820e-06  0:00:00 50000
+ 19964  2.2108e-03  2.3423e-04  6.5094e-04  2.1931e-03  4.7393e-06  5.9753e-06  1:32:01 49999
+ 19965  1.7910e-03  2.3159e-04  4.5904e-04  1.7754e-03  4.7409e-06  5.9777e-06  1:28:05 49998
+ 19966  1.6008e-03  2.2867e-04  7.1634e-04  1.5864e-03  4.7426e-06  5.9697e-06  1:25:05 49997
+ 19967  1.6484e-03  2.2811e-04  4.5318e-04  1.6335e-03  4.7442e-06  5.9674e-06  1:22:39 49996
+ 19968  1.2383e-03  2.2565e-04  4.3361e-04  1.2251e-03  4.7459e-06  5.9600e-06  1:20:35 49995
+!19969 solution is converged
+ 19969  9.8772e-04  2.2389e-04  4.1591e-04  9.7503e-04  4.7475e-06  5.9598e-06  1:18:46 49994
+
+> 
+Writing "NozzleA_Fine.2.cas"...
+
+  234720 quadrilateral cells, zone  3, binary.
+  234720 cell partition ids, zone  3, 16 partitions, binary.
+  466273 2D interior faces, zone  1, binary.
+     480 2D interior faces, zone  2, binary.
+     200 2D pressure-inlet faces, zone  6, binary.
+     498 2D pressure-far-field faces, zone  7, binary.
+    2389 2D axis faces, zone  8, binary.
+      80 2D pressure-inlet faces, zone  9, binary.
+    2207 2D wall faces, zone 10, binary.
+  237408 nodes, binary.
+  237408 node flags, binary.
+Done.
+
+
+Writing "NozzleA_Fine.2.dat"...
+
+Done.
+
+
+> 
