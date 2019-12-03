@@ -1,0 +1,795 @@
+# encoding: utf-8
+# 2019 R2
+SetScriptVersion(Version="19.4.159")
+system1 = GetSystem(Name="FFF")
+results1 = system1.GetContainer(ComponentName="Results")
+results1.Edit()
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /CONTOUR:Pressure Map, view=/VIEW:View 1""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.0601528, -0.0295149, 0.00137502
+    Scale = 6.15865
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+> autolegend plot=/CONTOUR:Mach Map, view=VIEW:View 1""")
+results1.SendCommand(Command="""CONTOUR:Mach Map
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = Mach Number
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = periodic 1
+Max = 0.0
+Min = 0.0
+Number of Contours = 200
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.0
+Use Face Values = Off
+Value List = 0,1
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.Exit()
+geometryComponent1 = system1.GetComponent(Name="Geometry")
+geometryComponent1.DeleteShare(System=system1)
+system2 = GetSystem(Name="FFF 4")
+solutionComponent1 = system2.GetComponent(Name="Solution")
+resultsComponent1 = system1.GetComponent(Name="Results")
+solutionComponent1.TransferData(TargetComponent=resultsComponent1)
+results1.Edit()
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.387065, 0, 0
+    Scale = 1.46992
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+VIEW:View 1
+  Valid Case=All Cases
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Valid Case=Case Nozzle a COARSE
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Valid Case=Case Nozzle a FINE
+END""")
+results1.Exit()
+results1.Edit()
+results1.SendCommand(Command="""VIEW:View 1
+  Light Angle = 50, 110
+END
+
+VIEW:View 2
+  Light Angle = 50, 110
+END
+
+VIEW:View 3
+  Light Angle = 50, 110
+END
+
+VIEW:View 4
+  Light Angle = 50, 110
+END
+
+> update
+>setViewportView cmd=set, view=/VIEW:View 2, viewport=1""")
+results1.SendCommand(Command="""VIEWPORT MANAGER:
+Viewport Layout = Vertical Split
+Maximized Viewport = -1
+END""")
+results1.SendCommand(Command="""VIEW:View 2
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.387065, 0.249326, 0
+    Scale = 3.01995
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+> autolegend plot=/CONTOUR:Mach Map, view=VIEW:View 2""")
+results1.SendCommand(Command="""CONTOUR:Mach Map
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = Mach Number
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = periodic 1
+Max = 0.0
+Min = 0.0
+Number of Contours = 200
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.0
+Use Face Values = Off
+Value List = 0,1
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:flowinlet, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:flowinlet, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1 shadow, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /CONTOUR:Mach Map, view=/VIEW:View 2""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /CONTOUR:Pressure Map, view=/VIEW:View 2""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /CONTOUR:Pressure Map, view=/VIEW:View 2""")
+results1.SendCommand(Command="""DATA READER:
+      CASE:Case Nozzle a COARSE
+    DOMAIN:solid surface_body
+Angle Definition Method = Instances in 360
+Apply Reflection = On
+Apply Rotation = On
+Apply Translation = Off
+Axis = X
+Axis From File = Custom
+Full Circle = Off
+Instance Definition = From File
+Number of Copies = 1
+Number of Data Instances = 1
+Number of Passages in 360 = 1
+Number of Passages in Component = 1
+Principal Axis = Z
+Reflection Plane Option = ZX Plane
+Rotation Angle = 0 [degree]
+Rotation Axis From = 0 [m], 0 [m], 0 [m]
+Rotation Axis To = 1 [m], 0 [m], 0 [m]
+Rotation Axis Type = Principal Axis
+X = 0.0 [m]
+Y = 0.0 [m]
+Z = 0.0 [m]
+    END
+  END
+END""")
+results1.SendCommand(Command=">centerview 2")
+results1.SendCommand(Command="""VIEW:View 2
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = -0.288536, 0.461187, 0.0301202
+    Scale = 3.01995
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+>centerview 1""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = -0.147828, -0.0285276, 0.00188539
+    Scale = 6.62167
+    Pan = 0, 0
+    Rotation Quaternion = 0.044045, -0.0605839, -0.0557529, 0.995631
+    
+  END
+
+END
+
+VIEW:View 2
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.387065, 0, 0
+    Scale = 1.84082
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+>undo""")
+results1.SendCommand(Command="""DATA READER:
+      CASE:Case Nozzle a COARSE
+    DOMAIN:solid surface_body
+Angle Definition Method = Instances in 360
+Apply Reflection = On
+Apply Rotation = On
+Apply Translation = Off
+Axis = X
+Axis From File = Custom
+Full Circle = Off
+Instance Definition = From File
+Number of Copies = 1
+Number of Data Instances = 1
+Number of Passages in 360 = 1
+Number of Passages in Component = 1
+Principal Axis = Z
+Reflection Plane Option = XY Plane
+Rotation Angle = 0 [degree]
+Rotation Axis From = 0 [m], 0 [m], 0 [m]
+Rotation Axis To = 1 [m], 0 [m], 0 [m]
+Rotation Axis Type = Principal Axis
+X = 0.0 [m]
+Y = 0.0 [m]
+Z = 0.0 [m]
+    END
+  END
+END""")
+results1.SendCommand(Command="""DATA READER:
+      CASE:Case Nozzle a COARSE
+    DOMAIN:solid surface_body
+Angle Definition Method = Instances in 360
+Apply Reflection = On
+Apply Rotation = On
+Apply Translation = Off
+Axis = X
+Axis From File = Custom
+Full Circle = Off
+Instance Definition = From File
+Number of Copies = 1
+Number of Data Instances = 1
+Number of Passages in 360 = 1
+Number of Passages in Component = 1
+Principal Axis = Z
+Reflection Plane Option = XY Plane
+Rotation Angle = 0 [degree]
+Rotation Axis From = 0 [m], 0 [m], 0 [m]
+Rotation Axis To = 1 [m], 0 [m], 0 [m]
+Rotation Axis Type = Principal Axis
+X = 0.0 [m]
+Y = 0.0 [m]
+Z = 0.0 [m]
+    END
+  END
+END""")
+results1.SendCommand(Command="""DATA READER:
+      CASE:Case Nozzle a COARSE
+    DOMAIN:solid surface_body
+Angle Definition Method = Instances in 360
+Apply Reflection = On
+Apply Rotation = On
+Apply Translation = Off
+Axis = X
+Axis From File = Custom
+Full Circle = Off
+Instance Definition = From File
+Number of Copies = 1
+Number of Data Instances = 1
+Number of Passages in 360 = 1
+Number of Passages in Component = 1
+Principal Axis = Z
+Reflection Plane Option = ZX Plane
+Rotation Angle = 0 [degree]
+Rotation Axis From = 0 [m], 0 [m], 0 [m]
+Rotation Axis To = 1 [m], 0 [m], 0 [m]
+Rotation Axis Type = Principal Axis
+X = 0.0 [m]
+Y = 0.0 [m]
+Z = 0.0 [m]
+    END
+  END
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.387065, 0, 0
+    Scale = 2.61549
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+VIEW:View 2
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.387065, 0, 0
+    Scale = 2.84316
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+VIEWPORT MANAGER:
+Maximized Viewport = 1
+END""")
+results1.SendCommand(Command="""VIEW:View 2
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.387065, 0, 0
+    Scale = 1.61191
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+VIEWPORT MANAGER:
+Maximized Viewport = -1
+END""")
+results1.SendCommand(Command="""VIEWPORT MANAGER:
+Maximized Viewport = 2
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.387065, 0, 0
+    Scale = 1.50482
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+> autolegend plot=/CONTOUR:Mach Map, view=VIEW:View 1""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.0218798, 0.0281931, 0.00184784
+    Scale = 2.0195
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+# Sending visibility action from ViewUtilities
+>show /CONTOUR:Pressure Map, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /CONTOUR:Mach Map, view=/VIEW:View 1""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.0218798, 0.0281931, 0.00184784
+    Scale = 2.78713
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+VIEWPORT MANAGER:
+Maximized Viewport = -1
+END""")
+results1.SendCommand(Command="""VIEWPORT MANAGER:
+Maximized Viewport = 2
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = -0.193312, 0.224763, 0.0146382
+    Scale = 2.78713
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+VIEWPORT MANAGER:
+Maximized Viewport = -1
+END""")
+results1.SendCommand(Command="""VIEWPORT MANAGER:
+Maximized Viewport = 1
+END""")
+results1.SendCommand(Command="""VIEW:View 2
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = -0.00716298, -0.0180104, 0.00110584
+    Scale = 5.34775
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command="""VIEW:View 2
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = -0.325075, 0.065889, 0.00427212
+    Scale = 1.04542
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command="""VIEW:View 2
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = -0.325075, 0.065889, 0.00427212
+    Scale = 2.95722
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case Nozzle a FINE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case Nozzle a COARSE/BOUNDARY:periodic 1, domainlist=/DATA READER/CASE:Case Nozzle a FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=">report save, format=preview")
+results1.SendCommand(Command="> autolegend plot=/LEGEND:Legend 1, view=VIEW:View 2")
+results1.SendCommand(Command="""LEGEND:Legend 1
+Colour = 0, 0, 0
+Font = Sans Serif
+Legend Aspect = 0.07
+Legend Format = %10.3e
+Legend Orientation = Horizontal
+Legend Plot = /CONTOUR:Mach Map
+Legend Position = 0.02 , 0.15 
+Legend Size = 0.6
+Legend Ticks = 5
+Legend Title = Legend
+Legend Title Mode = Variable and Location
+Legend X Justification = Right
+Legend Y Justification = Top
+Show Legend Units = On
+Text Colour Mode = Default
+Text Height = 0.024
+Text Rotation = 0
+END""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /LEGEND:Legend 1, view=/VIEW:View 2""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = -0.193312, 0.224763, 0.0146382
+    Scale = 2.525
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+VIEW:View 2
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = -0.325075, 0.065889, 0.00427212
+    Scale = 1.26402
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+LEGEND:Legend 1
+Colour = 0, 0, 0
+Font = Sans Serif
+Legend Aspect = 0.07
+Legend Format = %10.3e
+Legend Orientation = Horizontal
+Legend Plot = /CONTOUR:Pressure Map
+Legend Position = 0.02 , 0.15 
+Legend Size = 0.6
+Legend Ticks = 5
+Legend Title = Legend
+Legend Title Mode = Variable and Location
+Legend X Justification = Right
+Legend Y Justification = Top
+Show Legend Units = On
+Text Colour Mode = Default
+Text Height = 0.024
+Text Rotation = 0
+END""")
+results1.SendCommand(Command="""VIEW:View 2
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = -0.325075, 0.065889, 0.00427212
+    Scale = 0.326668
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+LEGEND:Legend 1
+Colour = 0, 0, 0
+Font = Sans Serif
+Legend Aspect = 0.07
+Legend Format = %10.3e
+Legend Orientation = Horizontal
+Legend Plot = /CONTOUR:Pressure Map
+Legend Position = 0.02 , 0.15 
+Legend Size = 0.6
+Legend Ticks = 5
+Legend Title = Legend
+Legend Title Mode = Variable and Location
+Legend X Justification = None
+Legend Y Justification = Bottom
+Show Legend Units = On
+Text Colour Mode = Default
+Text Height = 0.024
+Text Rotation = 0
+END""")
+results1.SendCommand(Command="""LEGEND:Legend 1
+Colour = 0, 0, 0
+Font = Sans Serif
+Legend Aspect = 0.07
+Legend Format = %10.3e
+Legend Orientation = Horizontal
+Legend Plot = /CONTOUR:Pressure Map
+Legend Position = 0.02 , 0.15 
+Legend Size = 0.6
+Legend Ticks = 5
+Legend Title = Legend
+Legend Title Mode = Variable and Location
+Legend X Justification = None
+Legend Y Justification = Top
+Show Legend Units = On
+Text Colour Mode = Default
+Text Height = 0.024
+Text Rotation = 0
+END""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /DEFAULT LEGEND:Default Legend View 2, view=/VIEW:View 2""")
+results1.SendCommand(Command="> autolegend plot=/LEGEND:Legend 1, view=VIEW:View 2")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = -0.193312, 0.224763, 0.0146382
+    Scale = 2.92649
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+LEGEND:Legend 1
+Colour = 0, 0, 0
+Font = Sans Serif
+Legend Aspect = 0.07
+Legend Format = %10.3e
+Legend Orientation = Horizontal
+Legend Plot = /CONTOUR:Mach Map
+Legend Position = 0.02 , 0.15 
+Legend Size = 0.6
+Legend Ticks = 5
+Legend Title = Legend
+Legend Title Mode = Variable and Location
+Legend X Justification = None
+Legend Y Justification = Top
+Show Legend Units = On
+Text Colour Mode = Default
+Text Height = 0.024
+Text Rotation = 0
+END""")

@@ -1,4 +1,4 @@
-# State file created:  2019/12/03 17:07:42
+# State file created:  2019/12/02 15:31:29
 # CFX-19.4
 
 COMMENT:User Data
@@ -28,7 +28,7 @@ CONTOUR:Mach Map
   Location List = periodic 1
   Max = 0.0
   Min = 0.0
-  Number of Contours = 200
+  Number of Contours = 50
   Show Numbers = Off
   Specular Lighting = On
   Surface Drawing = Smooth Shading
@@ -38,7 +38,7 @@ CONTOUR:Mach Map
   Transparency = 0.0
   Use Face Values = Off
   Value List = 0,1
-  Visibility = Off
+  Visibility = On
   OBJECT VIEW TRANSFORM:
     Apply Reflection = Off
     Apply Rotation = Off
@@ -109,20 +109,18 @@ CONTOUR:Pressure Map
   END
 END
 DATA READER:
-  Active Case Name = Case Nozzle a COARSE
-  Append Results = True
+  Active Case Name = Case Nozzle a FINE
+  Append Results = False
   Apply X Offset = false
   Apply Y Offset = false
   Apply Z Offset = false
   Clear All Objects = False
   Construct Variables From Fourier Coefficients = True
-  Current Case List = Case Nozzle a FINE,Case Nozzle a COARSE
-  Current Case Name = \\nas01.itap.purdue.edu\puhome\desktop\412GIT\\
-AAE412_Project\ANSYS_Files\SomethingExtra_files\dp0\FFF-4\Fluent\FFF-4-15-\
-01000.dat.gz
-  Current Results File = \\nas01.itap.purdue.edu\puhome\desktop\412GIT\\
-AAE412_Project\ANSYS_Files\SomethingExtra_files\dp0\FFF-4\Fluent\FFF-4-15-\
-01000.dat.gz
+  Current Case List = Case Nozzle a FINE
+  Current Case Name = W:\Documents\urine\git\ANSYS_Files\NozzleA\NozzleA_files\\
+dp0\FFF-5\Fluent\FFF-5.2-5-19963.dat.gz
+  Current Results File = W:\Documents\urine\git\ANSYS_Files\NozzleA\\
+NozzleA_files\dp0\FFF-5\Fluent\FFF-5.2-5-19963.dat.gz
   Current Timestep = -1
   Current Timevalue = 0
   Edit Case Names = false
@@ -149,12 +147,10 @@ AAE412_Project\ANSYS_Files\SomethingExtra_files\dp0\FFF-4\Fluent\FFF-4-15-\
   Timevalue Match Criterion = Same Value
   CASE:Case Nozzle a FINE
     Construct Variables From Fourier Coefficients = True
-    Current Case Name = \\nas01.itap.purdue.edu\puhome\desktop\412GIT\\
-AAE412_Project\ANSYS_Files\SomethingExtra_files\dp0\FFF-5\Fluent\FFF-5.2-9-\
-11460.dat.gz
-    Current Results File = \\nas01.itap.purdue.edu\puhome\desktop\412GIT\\
-AAE412_Project\ANSYS_Files\SomethingExtra_files\dp0\FFF-5\Fluent\FFF-5.2-9-\
-11460.dat.gz
+    Current Case Name = W:\Documents\urine\git\ANSYS_Files\NozzleA\\
+NozzleA_files\dp0\FFF-5\Fluent\FFF-5.2-5-19963.dat.gz
+    Current Results File = W:\Documents\urine\git\ANSYS_Files\NozzleA\\
+NozzleA_files\dp0\FFF-5\Fluent\FFF-5.2-5-19963.dat.gz
     Current Timestep = -1
     Current Timevalue = 0
     File Angle Units = rad
@@ -432,298 +428,6 @@ AAE412_Project\ANSYS_Files\SomethingExtra_files\dp0\FFF-5\Fluent\FFF-5.2-9-\
       Z = 0.0 [m]
     END
   END
-  CASE:Case Nozzle a COARSE
-    Construct Variables From Fourier Coefficients = True
-    Current Case Name = \\nas01.itap.purdue.edu\puhome\desktop\412GIT\\
-AAE412_Project\ANSYS_Files\SomethingExtra_files\dp0\FFF-4\Fluent\FFF-4-15-\
-01000.dat.gz
-    Current Results File = \\nas01.itap.purdue.edu\puhome\desktop\412GIT\\
-AAE412_Project\ANSYS_Files\SomethingExtra_files\dp0\FFF-4\Fluent\FFF-4-15-\
-01000.dat.gz
-    Current Timestep = -1
-    Current Timevalue = 0
-    File Angle Units = rad
-    File Chemical Amount Units = kmol
-    File Current Units = A
-    File Length Units = m
-    File Light Units = cd
-    File Mass Units = kg
-    File Solid Angle Units = sr
-    File Temperature Units = K
-    File Time Units = s
-    Multi Configuration File Load Option = Single Case
-    Workbench ID = 3
-    BOUNDARY:ambientinlet
-      Apply Instancing Transform = On
-      Apply Texture = Off
-      Blend Texture = On
-      Colour = 0.2, 0.5, 1
-      Colour Map = Default Colour Map
-      Colour Mode = Constant
-      Colour Scale = Linear
-      Colour Variable Boundary Values = Hybrid
-      Culling Mode = No Culling
-      Draw Faces = On
-      Draw Lines = Off
-      Instancing Transform = Default Transform
-      Lighting = true
-      Line Colour = 0, 0, 0
-      Line Colour Mode = Default
-      Line Width = 1
-      Range = Global
-      Render Edge Angle = 0 [degree]
-      Specular Lighting = On
-      Surface Drawing = Smooth Shading
-      Texture Angle = 0
-      Texture Direction = 0.0, 1.0, 0.0
-      Texture Material = Metal
-      Texture Position = 0.0, 0.0
-      Texture Scale = 1.0
-      Texture Type = Predefined
-      Tile Texture = Off
-      Transform Texture = Off
-      Transparency = 0.0
-      Visibility = false
-    END
-    BOUNDARY:axis
-      Apply Instancing Transform = On
-      Apply Texture = Off
-      Blend Texture = On
-      Colour = 0.2, 0.5, 1
-      Colour Map = Default Colour Map
-      Colour Mode = Constant
-      Colour Scale = Linear
-      Colour Variable Boundary Values = Hybrid
-      Culling Mode = No Culling
-      Draw Faces = On
-      Draw Lines = Off
-      Instancing Transform = Default Transform
-      Lighting = true
-      Line Colour = 0, 0, 0
-      Line Colour Mode = Default
-      Line Width = 1
-      Range = Global
-      Render Edge Angle = 0 [degree]
-      Specular Lighting = On
-      Surface Drawing = Smooth Shading
-      Texture Angle = 0
-      Texture Direction = 0.0, 1.0, 0.0
-      Texture Material = Metal
-      Texture Position = 0.0, 0.0
-      Texture Scale = 1.0
-      Texture Type = Predefined
-      Tile Texture = Off
-      Transform Texture = Off
-      Transparency = 0.0
-      Visibility = false
-    END
-    BOUNDARY:farfield
-      Apply Instancing Transform = On
-      Apply Texture = Off
-      Blend Texture = On
-      Colour = 0.2, 0.5, 1
-      Colour Map = Default Colour Map
-      Colour Mode = Constant
-      Colour Scale = Linear
-      Colour Variable Boundary Values = Hybrid
-      Culling Mode = No Culling
-      Draw Faces = On
-      Draw Lines = Off
-      Instancing Transform = Default Transform
-      Lighting = true
-      Line Colour = 0, 0, 0
-      Line Colour Mode = Default
-      Line Width = 1
-      Range = Global
-      Render Edge Angle = 0 [degree]
-      Specular Lighting = On
-      Surface Drawing = Smooth Shading
-      Texture Angle = 0
-      Texture Direction = 0.0, 1.0, 0.0
-      Texture Material = Metal
-      Texture Position = 0.0, 0.0
-      Texture Scale = 1.0
-      Texture Type = Predefined
-      Tile Texture = Off
-      Transform Texture = Off
-      Transparency = 0.0
-      Visibility = false
-    END
-    BOUNDARY:flowinlet
-      Apply Instancing Transform = On
-      Apply Texture = Off
-      Blend Texture = On
-      Colour = 0.2, 0.5, 1
-      Colour Map = Default Colour Map
-      Colour Mode = Constant
-      Colour Scale = Linear
-      Colour Variable Boundary Values = Hybrid
-      Culling Mode = No Culling
-      Draw Faces = On
-      Draw Lines = Off
-      Instancing Transform = Default Transform
-      Lighting = true
-      Line Colour = 0, 0, 0
-      Line Colour Mode = Default
-      Line Width = 1
-      Range = Global
-      Render Edge Angle = 0 [degree]
-      Specular Lighting = On
-      Surface Drawing = Smooth Shading
-      Texture Angle = 0
-      Texture Direction = 0.0, 1.0, 0.0
-      Texture Material = Metal
-      Texture Position = 0.0, 0.0
-      Texture Scale = 1.0
-      Texture Type = Predefined
-      Tile Texture = Off
-      Transform Texture = Off
-      Transparency = 0.0
-      Visibility = false
-    END
-    BOUNDARY:nozzlewall
-      Apply Instancing Transform = On
-      Apply Texture = Off
-      Blend Texture = On
-      Colour = 0.2, 0.5, 1
-      Colour Map = Default Colour Map
-      Colour Mode = Constant
-      Colour Scale = Linear
-      Colour Variable Boundary Values = Hybrid
-      Culling Mode = No Culling
-      Draw Faces = On
-      Draw Lines = Off
-      Instancing Transform = Default Transform
-      Lighting = true
-      Line Colour = 0, 0, 0
-      Line Colour Mode = Default
-      Line Width = 1
-      Range = Global
-      Render Edge Angle = 0 [degree]
-      Specular Lighting = On
-      Surface Drawing = Smooth Shading
-      Texture Angle = 0
-      Texture Direction = 0.0, 1.0, 0.0
-      Texture Material = Metal
-      Texture Position = 0.0, 0.0
-      Texture Scale = 1.0
-      Texture Type = Predefined
-      Tile Texture = Off
-      Transform Texture = Off
-      Transparency = 0.0
-      Visibility = false
-    END
-    BOUNDARY:periodic 1
-      Apply Instancing Transform = On
-      Apply Texture = Off
-      Blend Texture = On
-      Colour = 0.2, 0.5, 1
-      Colour Map = Default Colour Map
-      Colour Mode = Constant
-      Colour Scale = Linear
-      Colour Variable Boundary Values = Hybrid
-      Culling Mode = No Culling
-      Draw Faces = On
-      Draw Lines = Off
-      Instancing Transform = Default Transform
-      Lighting = true
-      Line Colour = 0, 0, 0
-      Line Colour Mode = Default
-      Line Width = 1
-      Range = Global
-      Render Edge Angle = 0 [degree]
-      Specular Lighting = On
-      Surface Drawing = Smooth Shading
-      Texture Angle = 0
-      Texture Direction = 0.0, 1.0, 0.0
-      Texture Material = Metal
-      Texture Position = 0.0, 0.0
-      Texture Scale = 1.0
-      Texture Type = Predefined
-      Tile Texture = Off
-      Transform Texture = Off
-      Transparency = 0.0
-      Visibility = false
-    END
-    BOUNDARY:periodic 1 shadow
-      Apply Instancing Transform = On
-      Apply Texture = Off
-      Blend Texture = On
-      Colour = 0.2, 0.5, 1
-      Colour Map = Default Colour Map
-      Colour Mode = Constant
-      Colour Scale = Linear
-      Colour Variable Boundary Values = Hybrid
-      Culling Mode = No Culling
-      Draw Faces = On
-      Draw Lines = Off
-      Instancing Transform = Default Transform
-      Lighting = true
-      Line Colour = 0, 0, 0
-      Line Colour Mode = Default
-      Line Width = 1
-      Range = Global
-      Render Edge Angle = 0 [degree]
-      Specular Lighting = On
-      Surface Drawing = Smooth Shading
-      Texture Angle = 0
-      Texture Direction = 0.0, 1.0, 0.0
-      Texture Material = Metal
-      Texture Position = 0.0, 0.0
-      Texture Scale = 1.0
-      Texture Type = Predefined
-      Tile Texture = Off
-      Transform Texture = Off
-      Transparency = 0.0
-      Visibility = false
-    END
-    DOMAIN:solid surface_body
-      Angle Definition Method = Instances in 360
-      Apply Reflection = On
-      Apply Rotation = On
-      Apply Translation = Off
-      Axis = X
-      Axis From File = Custom
-      Background Mesh Density = 2000
-      Background Mesh Generation Method = Quasi Orthogonal
-      Blade Aligned Variable Available = false
-      Create Additional Turbo Variables = false
-      Do Cylindrical Initialization = False
-      Domain Type = Normal
-      Full Circle = Off
-      Hub Curve Mode = From Turbo Region
-      Inlet Curve Mode = From Turbo Region
-      Inlet Region = ambientinlet,flowinlet
-      Instance Definition = From File
-      Linear Blade Aligned Variable Available = false
-      Number of Components in 360 = 1
-      Number of Copies = 1
-      Number of Data Instances = 1
-      Number of Passages in 360 = 1
-      Number of Passages in Component = 1
-      Outlet Curve Mode = From Turbo Region
-      Principal Axis = Z
-      Reflection Plane Option = ZX Plane
-      Rotation Angle = 0 [degree]
-      Rotation Axis From = 0 [m], 0 [m], 0 [m]
-      Rotation Axis To = 1 [m], 0 [m], 0 [m]
-      Rotation Axis Type = Principal Axis
-      Shroud Curve Mode = From Turbo Region
-      TBR User Theta Correction = 0.0
-      Translation Vector = 0.0, 0.0, 0.0
-      Turbo 360 Case without Periodics = false
-      X = 0.0 [m]
-      Y = 0.0 [m]
-      Z = 0.0 [m]
-    END
-  END
-  CASE COMPARISON:
-    Absolute Value of Difference = false
-    Mode Is Active = false
-    Same Mesh Detection Mode = Auto Detect
-    Synchronize Camera on Activate = true
-    Synchronize Visibility on Activate = true
-  END
 END
 DEFAULT INSTANCE TRANSFORM:Default Transform
   Angle Definition Method = Instances in 360
@@ -753,7 +457,7 @@ DEFAULT LEGEND:Default Legend View 1
   Legend Aspect = 0.07
   Legend Format = %10.3e
   Legend Orientation = Vertical
-  Legend Plot = /CONTOUR:Pressure Map
+  Legend Plot = /CONTOUR:Mach Map
   Legend Position = 0.02, 0.15
   Legend Resolution = 256
   Legend Shading = Smooth
@@ -768,7 +472,7 @@ DEFAULT LEGEND:Default Legend View 1
   Text Colour Mode = Default
   Text Height = 0.024
   Text Rotation = 0
-  Visibility = Off
+  Visibility = true
 END
 DEFAULT LEGEND:Default Legend View 2
   Colour = 0, 0, 0
@@ -776,7 +480,7 @@ DEFAULT LEGEND:Default Legend View 2
   Legend Aspect = 0.07
   Legend Format = %10.3e
   Legend Orientation = Vertical
-  Legend Plot = /CONTOUR:Pressure Map
+  Legend Plot = /CONTOUR:Mach Map
   Legend Position = 0.02, 0.15
   Legend Resolution = 256
   Legend Shading = Smooth
@@ -791,7 +495,7 @@ DEFAULT LEGEND:Default Legend View 2
   Text Colour Mode = Default
   Text Height = 0.024
   Text Rotation = 0
-  Visibility = Off
+  Visibility = true
 END
 DEFAULT LEGEND:Default Legend View 3
   Colour = 0, 0, 0
@@ -846,28 +550,6 @@ FILE PROCESSING:
   Path Stack = .
   Processing Mode = None
   Supress File Replacement Warnings = false
-END
-LEGEND:Legend 1
-  Colour = 0, 0, 0
-  Font = Sans Serif
-  Legend Aspect = 0.07
-  Legend Format = %10.3e
-  Legend Orientation = Horizontal
-  Legend Plot = /CONTOUR:Mach Map
-  Legend Position = 0.02 , 0.15
-  Legend Resolution = 256
-  Legend Shading = Smooth
-  Legend Size = 0.6
-  Legend Ticks = 5
-  Legend Title = Legend
-  Legend Title Mode = Variable and Location
-  Legend X Justification = None
-  Legend Y Justification = Top
-  Show Legend Units = On
-  Text Colour Mode = Default
-  Text Height = 0.024
-  Text Rotation = 0
-  Visibility = On
 END
 LIBRARY:
   CEL:
@@ -1037,7 +719,7 @@ END
 SCALAR VARIABLE:Temperature
   Boundary Values = Conservative
 END
-SCALAR VARIABLE:Turbulence Eddy Dissipation
+SCALAR VARIABLE:Turbulence Eddy Frequency
   Boundary Values = Conservative
 END
 SCALAR VARIABLE:Turbulence Kinetic Energy
@@ -1313,19 +995,18 @@ VIEW:View 1
   Highlight Type = Surface Mesh
   Is A Figure = false
   Light Angle = 50, 110
-  Object Visibility List = /CONTOUR:Pressure Map,/LEGEND:Legend 1,/\
-WIREFRAME:Wireframe
+  Object Visibility List = /CONTOUR:Mach Map,/CONTOUR:Pressure Map,/DEFAULT \
+LEGEND:Default Legend View 1,/WIREFRAME:Wireframe
   Projection = Orthographic
   Ruler Visibility = true
   Standard View = Isometric Y
-  Valid Case = Case Nozzle a FINE
   CAMERA:
     Option = Pivot Point and Quaternion
-    Pan = 0,0
-    Pivot Point = -0.193312,0.224763,0.0146382
+    Pan = 0.433248,0.0114139
+    Pivot Point = 0.387065,0,0
     Rotation = -90, 0, 0
     Rotation Quaternion = 0,0,0,1
-    Scale = 2.92649
+    Scale = 2.36691
     Send To Viewer = True
   END
 END
@@ -1341,19 +1022,18 @@ VIEW:View 2
   Highlight Type = Surface Mesh
   Is A Figure = false
   Light Angle = 50, 110
-  Object Visibility List = /CONTOUR:Pressure Map,/LEGEND:Legend 1,/\
+  Object Visibility List = /DEFAULT LEGEND:Default Legend View 2,/\
 WIREFRAME:Wireframe
   Projection = Orthographic
   Ruler Visibility = true
   Standard View = Isometric Y
-  Valid Case = Case Nozzle a COARSE
   CAMERA:
     Option = Pivot Point and Quaternion
     Pan = 0,0
-    Pivot Point = -0.325075,0.065889,0.00427212
+    Pivot Point = 0,0,0
     Rotation = -90, 0, 0
-    Rotation Quaternion = 0,0,0,1
-    Scale = 0.326668
+    Rotation Quaternion = 0.279848,-0.364705,-0.115917,0.880476
+    Scale = 1
     Send To Viewer = True
   END
 END
@@ -1421,15 +1101,15 @@ VIEWPORT MANAGER:
   Background Type = Colour
   Global Edge Colour = 0,0,0
   Global Text Colour = 0,0,0
-  Maximized Viewport = 1
+  Maximized Viewport = -1
   Synchronize Camera = false
   Synchronize Visibility = true
   View Length Units = m
-  Viewport 1 View = View 2
-  Viewport 2 View = View 1
+  Viewport 1 View = View 1
+  Viewport 2 View = View 2
   Viewport 3 View = View 3
   Viewport 4 View = View 4
-  Viewport Layout = Vertical Split
+  Viewport Layout = No Split
   X Split = 0.5
   Y Split = 0.5
 END
