@@ -1,0 +1,5 @@
+file/read-case NozzleC_Course.cas
+file/read-data NozzleC_Course.dat
+it 50000
+file/write-case-data NozzleC_Course.2
+exit

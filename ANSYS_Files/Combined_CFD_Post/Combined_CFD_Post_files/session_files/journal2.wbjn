@@ -1,0 +1,128 @@
+# encoding: utf-8
+# 2019 R2
+SetScriptVersion(Version="19.4.159")
+template1 = GetTemplate(TemplateName="Fluid Flow")
+system1 = GetSystem(Name="FFF 4")
+system2 = template1.CreateSystem(
+    Position="Left",
+    RelativeTo=system1)
+system2.DisplayText = "C-COARSE"
+system3 = template1.CreateSystem(
+    Position="Left",
+    RelativeTo=system1)
+system3.DisplayText = "C-FINE"
+setup1 = system2.GetContainer(ComponentName="Setup")
+setup1.Import(
+    FilePath="W:/AAE412/Project/Git/ANSYS_Files/NozzleC/Run_In_Linux/NozzleC_Course.2.cas",
+    FileType="Case")
+setupComponent1 = system2.GetComponent(Name="Setup")
+setupComponent1.Refresh()
+Fluent.ImportFinalData(
+    Container=setup1,
+    FilePath="W:/AAE412/Project/Git/ANSYS_Files/NozzleC/Run_In_Linux/NozzleC_Course.2.dat")
+solution1 = system2.GetContainer(ComponentName="Solution")
+solution1.MarkUpdateRequired()
+setup2 = system3.GetContainer(ComponentName="Setup")
+setup2.Import(
+    FilePath="W:/AAE412/Project/Git/ANSYS_Files/NozzleC/Run_In_Linux/NozzleC_Fine.2.cas",
+    FileType="Case")
+setupComponent2 = system3.GetComponent(Name="Setup")
+setupComponent2.Refresh()
+Fluent.ImportFinalData(
+    Container=setup2,
+    FilePath="W:/AAE412/Project/Git/ANSYS_Files/NozzleC/Run_In_Linux/NozzleC_Fine.2.dat")
+solution2 = system3.GetContainer(ComponentName="Solution")
+solution2.MarkUpdateRequired()
+solutionComponent1 = system2.GetComponent(Name="Solution")
+resultsComponent1 = system1.GetComponent(Name="Results")
+solutionComponent1.TransferData(TargetComponent=resultsComponent1)
+solutionComponent2 = system3.GetComponent(Name="Solution")
+solutionComponent2.TransferData(TargetComponent=resultsComponent1)
+Save(Overwrite=True)
+results1 = system1.GetContainer(ComponentName="Results")
+results1.Edit()
+results1.SendCommand(Command="""VIEW:View 1
+  Light Angle = 50, 110
+END
+
+VIEW:View 2
+  Light Angle = 50, 110
+END
+
+VIEW:View 3
+  Light Angle = 50, 110
+END
+
+VIEW:View 4
+  Light Angle = 50, 110
+END
+
+> update
+VIEW:View 1
+  Valid Case=Case B COARSE
+END""")
+results1.SendCommand(Command="""VIEW:View 2
+  Valid Case=Case B FINE
+END""")
+results1.SendCommand(Command="""VIEW:View 4
+  Valid Case=Case C COARSE
+END""")
+results1.SendCommand(Command="""VIEW:View 3
+  Valid Case=Case C FINE
+END""")
+results1.SendCommand(Command="""DATA READER:
+      CASE:Case C COARSE
+    DOMAIN:solid surface_body
+Angle Definition Method = Instances in 360
+Apply Reflection = On
+Apply Rotation = On
+Apply Translation = Off
+Axis = X
+Axis From File = Custom
+Full Circle = Off
+Instance Definition = From File
+Number of Copies = 1
+Number of Data Instances = 1
+Number of Passages in 360 = 1
+Number of Passages in Component = 1
+Principal Axis = Z
+Reflection Plane Option = ZX Plane
+Rotation Angle = 0 [degree]
+Rotation Axis From = 0 [m], 0 [m], 0 [m]
+Rotation Axis To = 1 [m], 0 [m], 0 [m]
+Rotation Axis Type = Principal Axis
+X = 0.0 [m]
+Y = 0.0 [m]
+Z = 0.0 [m]
+    END
+  END
+END""")
+results1.SendCommand(Command="""DATA READER:
+      CASE:Case C FINE
+    DOMAIN:solid surface_body
+Angle Definition Method = Instances in 360
+Apply Reflection = On
+Apply Rotation = On
+Apply Translation = Off
+Axis = X
+Axis From File = Custom
+Full Circle = Off
+Instance Definition = From File
+Number of Copies = 1
+Number of Data Instances = 1
+Number of Passages in 360 = 1
+Number of Passages in Component = 1
+Principal Axis = Z
+Reflection Plane Option = ZX Plane
+Rotation Angle = 0 [degree]
+Rotation Axis From = 0 [m], 0 [m], 0 [m]
+Rotation Axis To = 1 [m], 0 [m], 0 [m]
+Rotation Axis Type = Principal Axis
+X = 0.0 [m]
+Y = 0.0 [m]
+Z = 0.0 [m]
+    END
+  END
+END""")
+results1.Exit()
+Save(Overwrite=True)
