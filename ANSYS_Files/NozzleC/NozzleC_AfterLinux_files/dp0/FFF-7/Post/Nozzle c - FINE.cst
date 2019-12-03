@@ -1,6 +1,224 @@
-# State file created:  2019/12/03 00:38:35
+# State file created:  2019/12/03 15:06:44
 # CFX-19.4
 
+CALCULATOR:
+  Case Name = Case Nozzle c FINE
+  Function = area
+  Verbose = Off
+END
+CHART:YPlus
+  Chart Axes = Both
+  Chart Axes Font = Tahoma, 10, False, False, False, False
+  Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+  Chart Grid Line Width = 1
+  Chart Horizontal Grid = On
+  Chart Legend = On
+  Chart Legend Font = Tahoma, 8, False, False, False, False
+  Chart Legend Inside = Outside Chart
+  Chart Legend Justification = Center
+  Chart Legend Position = Bottom
+  Chart Legend Width Height = 0.2 , 0.4
+  Chart Legend X Justification = Right
+  Chart Legend XY Position = 0.73 , 0.275
+  Chart Legend Y Justification = Center
+  Chart Line Width = 2
+  Chart Lines Order = Series 1,Chart Line 1,Series 1,Chart Line 2,Series 2,\
+Chart Line 3,Series 2,Chart Line 4
+  Chart Minor Grid = Off
+  Chart Minor Grid Line Width = 1
+  Chart Print Base Height = 700
+  Chart Print Base Width = 700
+  Chart Symbol Size = 4
+  Chart Text Colour = White
+  Chart Title = Y Plus
+  Chart Title Font = Tahoma, 12, True, False, False, False
+  Chart Title Visibility = On
+  Chart Type = XY
+  Chart Vertical Grid = On
+  Chart Viewport Colour = Yellow
+  Chart X Axis Automatic Number Formatting = On
+  Chart X Axis Label = X Axis <units>
+  Chart X Axis Number Format = %10.3e
+  Chart Y Axis Automatic Number Formatting = On
+  Chart Y Axis Label = Y Axis <units>
+  Chart Y Axis Number Format = %10.3e
+  Default Chart X Variable = X
+  Default Chart Y Variable = Yplus
+  Default Difference Line Calculation = From Points
+  Default Histogram Y Axis Weighting = None
+  Default Time Chart Variable = Pressure
+  Default Time Chart X Expression = Time
+  Default Time Variable Absolute Value = Off
+  Default Time Variable Boundary Values = Conservative
+  Default X Variable Absolute Value = Off
+  Default X Variable Boundary Values = Conservative
+  Default Y Variable Absolute Value = Off
+  Default Y Variable Boundary Values = Conservative
+  FFT Full Input Range = On
+  FFT Max = 0.0
+  FFT Min = 0.0
+  FFT Subtract Mean = Off
+  FFT Window Type = Hanning
+  FFT X Function = Frequency
+  FFT Y Function = Power Spectral Density
+  Histogram Automatic Divisions = Automatic
+  Histogram Divisions = -1.0,1.0
+  Histogram Divisions Count = 10
+  Histogram Y Axis Value = Count
+  Is FFT Chart = Off
+  Max X = 1.0
+  Max Y = 1.0
+  Min X = -1.0
+  Min Y = -1.0
+  Time Chart Keep Single Case = False
+  Use Data For X Axis Labels = On
+  Use Data For Y Axis Labels = On
+  X Axis Automatic Range = On
+  X Axis Inverted = Off
+  X Axis Logarithmic Scaling = Off
+  Y Axis Automatic Range = On
+  Y Axis Inverted = Off
+  Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+    Add Chart Line Label = False
+    Chart Contour Level Count = 11
+    Chart Contour Range Type = Local
+    Chart Contour Range Value List = 0.0, 1.0
+    Chart Line Custom Data Selection = Off
+    Chart Line Label Number Automatic Formatting = true
+    Chart Line Label Number Format = %10.3e
+    Chart Plot Option = Scatter Points
+    Chart Series Type = Regular
+    Chart X Variable = Chart Count
+    Chart Y Variable = Density
+    Histogram Y Axis Weighting = None
+    Location = /LINE:NozWallC
+    Monitor Data Source = Case
+    Monitor Data X Variable Absolute Value = Off
+    Monitor Data Y Variable Absolute Value = Off
+    Operating Point Data Case = Case Nozzle c COARSE
+    Operating Point Data Source = File
+    Series Name = Y Plus - Parallel
+    Time Chart Expression = Time
+    Time Chart Type = Point
+    Time Chart Variable = Density
+    Time Chart X Expression = Time
+    Time Variable Absolute Value = Off
+    Time Variable Boundary Values = Conservative
+    X Variable Absolute Value = Off
+    X Variable Boundary Values = Conservative
+    Y Variable Absolute Value = Off
+    Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+      Auto Chart Line Colour = On
+      Auto Chart Symbol Colour = On
+      Case Name = Case Nozzle c COARSE
+      Category Values = 0
+      Chart FFT Line Type = Bars
+      Chart Line Colour = 1.0, 0.0, 0.0
+      Chart Line Style = Automatic
+      Chart Line Type = Lines
+      Chart Line Visibility = On
+      Chart Symbol Colour = 0.0, 1.0, 0.0
+      Chart Symbol Style = Automatic
+      Fill Area = On
+      Fill Area Options = Automatic
+      Is Valid = True
+      Line Name = Y Plus - Parallel for Nozzle c COARSE
+      Use Automatic Line Naming = On
+    END
+    CHART LINE:Chart Line 2
+      Auto Chart Line Colour = On
+      Auto Chart Symbol Colour = On
+      Case Name = Case Nozzle c FINE
+      Category Values = 0
+      Chart FFT Line Type = Bars
+      Chart Line Colour = 1.0, 0.0, 0.0
+      Chart Line Style = Automatic
+      Chart Line Type = Lines
+      Chart Line Visibility = On
+      Chart Symbol Colour = 0.0, 1.0, 0.0
+      Chart Symbol Style = Automatic
+      Fill Area = On
+      Fill Area Options = Automatic
+      Is Valid = True
+      Line Name = Y Plus - Parallel for Nozzle c FINE
+      Use Automatic Line Naming = On
+    END
+  END
+  CHART SERIES:Series 2
+    Add Chart Line Label = False
+    Chart Contour Level Count = 11
+    Chart Contour Range Type = Local
+    Chart Contour Range Value List = 0.0, 1.0
+    Chart Line Custom Data Selection = Off
+    Chart Line Label Number Automatic Formatting = true
+    Chart Line Label Number Format = %10.3e
+    Chart Plot Option = Scatter Points
+    Chart Series Type = Regular
+    Chart X Variable = Chart Count
+    Chart Y Variable = Density
+    Histogram Y Axis Weighting = None
+    Location = /LINE:NozWallC2
+    Monitor Data Source = Case
+    Monitor Data X Variable Absolute Value = Off
+    Monitor Data Y Variable Absolute Value = Off
+    Operating Point Data Case = Case Nozzle c COARSE
+    Operating Point Data Source = File
+    Series Name = Y Plus - Slanted
+    Time Chart Expression = Time
+    Time Chart Type = Point
+    Time Chart Variable = Density
+    Time Chart X Expression = Time
+    Time Variable Absolute Value = Off
+    Time Variable Boundary Values = Conservative
+    X Variable Absolute Value = Off
+    X Variable Boundary Values = Conservative
+    Y Variable Absolute Value = Off
+    Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 3
+      Auto Chart Line Colour = Off
+      Auto Chart Symbol Colour = On
+      Case Name = Case Nozzle c COARSE
+      Category Values = 0
+      Chart FFT Line Type = Bars
+      Chart Line Colour = 1.0, 0.0, 0.0
+      Chart Line Style = Automatic
+      Chart Line Type = Lines
+      Chart Line Visibility = On
+      Chart Symbol Colour = 0.0, 1.0, 0.0
+      Chart Symbol Style = Automatic
+      Fill Area = On
+      Fill Area Options = Automatic
+      Is Valid = True
+      Line Name = Y Plus - Slanted for Nozzle c COARSE
+      Use Automatic Line Naming = On
+    END
+    CHART LINE:Chart Line 4
+      Auto Chart Line Colour = Off
+      Auto Chart Symbol Colour = On
+      Case Name = Case Nozzle c FINE
+      Category Values = 0
+      Chart FFT Line Type = Bars
+      Chart Line Colour = 0.2, 0.2, 1.0
+      Chart Line Style = Automatic
+      Chart Line Type = Lines
+      Chart Line Visibility = On
+      Chart Symbol Colour = 0.0, 1.0, 0.0
+      Chart Symbol Style = Automatic
+      Fill Area = On
+      Fill Area Options = Automatic
+      Is Valid = True
+      Line Name = Y Plus - Slanted for Nozzle c FINE
+      Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+    Automatic Item = None
+    Generation = Manual
+    Report Caption = Nozzle C
+  END
+END
 COMMENT:User Data
   Comment Exists = True
   Comment Heading = User Data
@@ -38,6 +256,57 @@ CONTOUR:Mach
   Transparency = 0.0
   Use Face Values = Off
   Value List = 0,1
+  Visibility = Off
+  OBJECT VIEW TRANSFORM:
+    Apply Reflection = Off
+    Apply Rotation = Off
+    Apply Scale = Off
+    Apply Translation = Off
+    Principal Axis = Z
+    Reflection Plane Option = XY Plane
+    Rotation Angle = 0.0 [degree]
+    Rotation Axis From = 0 [m], 0 [m], 0 [m]
+    Rotation Axis To = 0 [m], 0 [m], 0 [m]
+    Rotation Axis Type = Principal Axis
+    Scale Vector = 1 , 1 , 1
+    Translation Vector = 0 [m], 0 [m], 0 [m]
+    X = 0.0 [m]
+    Y = 0.0 [m]
+    Z = 0.0 [m]
+  END
+END
+CONTOUR:PressureContour
+  Apply Instancing Transform = On
+  Clip Contour = Off
+  Colour Map = Default Colour Map
+  Colour Scale = Linear
+  Colour Variable = Pressure
+  Colour Variable Boundary Values = Conservative
+  Constant Contour Colour = Off
+  Contour Range = Global
+  Culling Mode = No Culling
+  Domain List = /DOMAIN GROUP:All Domains
+  Draw Contours = On
+  Font = Sans Serif
+  Fringe Fill = On
+  Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+  Lighting = On
+  Line Colour = 0, 0, 0
+  Line Colour Mode = Default
+  Line Width = 1
+  Location List = periodic 1
+  Max = 0.0 [Pa]
+  Min = 0.0 [Pa]
+  Number of Contours = 11
+  Show Numbers = Off
+  Specular Lighting = On
+  Surface Drawing = Smooth Shading
+  Text Colour = 0, 0, 0
+  Text Colour Mode = Default
+  Text Height = 0.024
+  Transparency = 0.0
+  Use Face Values = Off
+  Value List = 0 [Pa],1 [Pa]
   Visibility = On
   OBJECT VIEW TRANSFORM:
     Apply Reflection = Off
@@ -58,18 +327,18 @@ CONTOUR:Mach
   END
 END
 DATA READER:
-  Active Case Name = Case Nozzle c FINE
-  Append Results = False
+  Active Case Name = Case Nozzle c COARSE
+  Append Results = True
   Apply X Offset = false
   Apply Y Offset = false
   Apply Z Offset = false
   Clear All Objects = False
   Construct Variables From Fourier Coefficients = True
-  Current Case List = Case Nozzle c FINE
+  Current Case List = Case Nozzle c FINE,Case Nozzle c COARSE
   Current Case Name = W:\AAE412\Project\Git\ANSYS_Files\NozzleC\\
-NozzleC_AfterLinux_files\dp0\FFF-7\Fluent\NozzleC_Fine.2.dat
+NozzleC_AfterLinux_files\dp0\FFF-6\Fluent\NozzleC_Course.2.dat
   Current Results File = W:\AAE412\Project\Git\ANSYS_Files\NozzleC\\
-NozzleC_AfterLinux_files\dp0\FFF-7\Fluent\NozzleC_Fine.2.dat
+NozzleC_AfterLinux_files\dp0\FFF-6\Fluent\NozzleC_Course.2.dat
   Current Timestep = -1
   Current Timevalue = 0
   Edit Case Names = false
@@ -303,7 +572,290 @@ NozzleC_AfterLinux_files\dp0\FFF-7\Fluent\NozzleC_Fine.2.dat
       Tile Texture = Off
       Transform Texture = Off
       Transparency = 0.0
+      Visibility = Off
+    END
+    BOUNDARY:periodic 1 shadow
+      Apply Instancing Transform = On
+      Apply Texture = Off
+      Blend Texture = On
+      Colour = 0.2, 0.5, 1
+      Colour Map = Default Colour Map
+      Colour Mode = Constant
+      Colour Scale = Linear
+      Colour Variable Boundary Values = Hybrid
+      Culling Mode = No Culling
+      Draw Faces = On
+      Draw Lines = Off
+      Instancing Transform = Default Transform
+      Lighting = true
+      Line Colour = 0, 0, 0
+      Line Colour Mode = Default
+      Line Width = 1
+      Range = Global
+      Render Edge Angle = 0 [degree]
+      Specular Lighting = On
+      Surface Drawing = Smooth Shading
+      Texture Angle = 0
+      Texture Direction = 0.0, 1.0, 0.0
+      Texture Material = Metal
+      Texture Position = 0.0, 0.0
+      Texture Scale = 1.0
+      Texture Type = Predefined
+      Tile Texture = Off
+      Transform Texture = Off
+      Transparency = 0.0
+      Visibility = Off
+    END
+    DOMAIN:solid surface_body
+      Angle Definition Method = Instances in 360
+      Apply Reflection = On
+      Apply Rotation = On
+      Apply Translation = Off
+      Axis = X
+      Axis From File = Custom
+      Background Mesh Density = 2000
+      Background Mesh Generation Method = Quasi Orthogonal
+      Blade Aligned Variable Available = false
+      Create Additional Turbo Variables = false
+      Do Cylindrical Initialization = False
+      Domain Type = Normal
+      Full Circle = Off
+      Hub Curve Mode = From Turbo Region
+      Inlet Curve Mode = From Turbo Region
+      Inlet Region = ambientinlet,flowinlet
+      Instance Definition = From File
+      Linear Blade Aligned Variable Available = false
+      Number of Components in 360 = 1
+      Number of Copies = 1
+      Number of Data Instances = 1
+      Number of Passages in 360 = 1
+      Number of Passages in Component = 1
+      Outlet Curve Mode = From Turbo Region
+      Principal Axis = Z
+      Reflection Plane Option = ZX Plane
+      Rotation Angle = 0 [degree]
+      Rotation Axis From = 0 [m], 0 [m], 0 [m]
+      Rotation Axis To = 1 [m], 0 [m], 0 [m]
+      Rotation Axis Type = Principal Axis
+      Shroud Curve Mode = From Turbo Region
+      TBR User Theta Correction = 0.0
+      Translation Vector = 0.0, 0.0, 0.0
+      Turbo 360 Case without Periodics = false
+      X = 0.0 [m]
+      Y = 0.0 [m]
+      Z = 0.0 [m]
+    END
+  END
+  CASE:Case Nozzle c COARSE
+    Construct Variables From Fourier Coefficients = True
+    Current Case Name = W:\AAE412\Project\Git\ANSYS_Files\NozzleC\\
+NozzleC_AfterLinux_files\dp0\FFF-6\Fluent\NozzleC_Course.2.dat
+    Current Results File = W:\AAE412\Project\Git\ANSYS_Files\NozzleC\\
+NozzleC_AfterLinux_files\dp0\FFF-6\Fluent\NozzleC_Course.2.dat
+    Current Timestep = -1
+    Current Timevalue = 0
+    File Angle Units = rad
+    File Chemical Amount Units = kmol
+    File Current Units = A
+    File Length Units = m
+    File Light Units = cd
+    File Mass Units = kg
+    File Solid Angle Units = sr
+    File Temperature Units = K
+    File Time Units = s
+    Multi Configuration File Load Option = Single Case
+    Workbench ID = 3
+    BOUNDARY:ambientinlet
+      Apply Instancing Transform = On
+      Apply Texture = Off
+      Blend Texture = On
+      Colour = 0.2, 0.5, 1
+      Colour Map = Default Colour Map
+      Colour Mode = Constant
+      Colour Scale = Linear
+      Colour Variable Boundary Values = Hybrid
+      Culling Mode = No Culling
+      Draw Faces = On
+      Draw Lines = Off
+      Instancing Transform = Default Transform
+      Lighting = true
+      Line Colour = 0, 0, 0
+      Line Colour Mode = Default
+      Line Width = 1
+      Range = Global
+      Render Edge Angle = 0 [degree]
+      Specular Lighting = On
+      Surface Drawing = Smooth Shading
+      Texture Angle = 0
+      Texture Direction = 0.0, 1.0, 0.0
+      Texture Material = Metal
+      Texture Position = 0.0, 0.0
+      Texture Scale = 1.0
+      Texture Type = Predefined
+      Tile Texture = Off
+      Transform Texture = Off
+      Transparency = 0.0
       Visibility = false
+    END
+    BOUNDARY:axis
+      Apply Instancing Transform = On
+      Apply Texture = Off
+      Blend Texture = On
+      Colour = 0.2, 0.5, 1
+      Colour Map = Default Colour Map
+      Colour Mode = Constant
+      Colour Scale = Linear
+      Colour Variable Boundary Values = Hybrid
+      Culling Mode = No Culling
+      Draw Faces = On
+      Draw Lines = Off
+      Instancing Transform = Default Transform
+      Lighting = true
+      Line Colour = 0, 0, 0
+      Line Colour Mode = Default
+      Line Width = 1
+      Range = Global
+      Render Edge Angle = 0 [degree]
+      Specular Lighting = On
+      Surface Drawing = Smooth Shading
+      Texture Angle = 0
+      Texture Direction = 0.0, 1.0, 0.0
+      Texture Material = Metal
+      Texture Position = 0.0, 0.0
+      Texture Scale = 1.0
+      Texture Type = Predefined
+      Tile Texture = Off
+      Transform Texture = Off
+      Transparency = 0.0
+      Visibility = false
+    END
+    BOUNDARY:farfield
+      Apply Instancing Transform = On
+      Apply Texture = Off
+      Blend Texture = On
+      Colour = 0.2, 0.5, 1
+      Colour Map = Default Colour Map
+      Colour Mode = Constant
+      Colour Scale = Linear
+      Colour Variable Boundary Values = Hybrid
+      Culling Mode = No Culling
+      Draw Faces = On
+      Draw Lines = Off
+      Instancing Transform = Default Transform
+      Lighting = true
+      Line Colour = 0, 0, 0
+      Line Colour Mode = Default
+      Line Width = 1
+      Range = Global
+      Render Edge Angle = 0 [degree]
+      Specular Lighting = On
+      Surface Drawing = Smooth Shading
+      Texture Angle = 0
+      Texture Direction = 0.0, 1.0, 0.0
+      Texture Material = Metal
+      Texture Position = 0.0, 0.0
+      Texture Scale = 1.0
+      Texture Type = Predefined
+      Tile Texture = Off
+      Transform Texture = Off
+      Transparency = 0.0
+      Visibility = false
+    END
+    BOUNDARY:flowinlet
+      Apply Instancing Transform = On
+      Apply Texture = Off
+      Blend Texture = On
+      Colour = 0.2, 0.5, 1
+      Colour Map = Default Colour Map
+      Colour Mode = Constant
+      Colour Scale = Linear
+      Colour Variable Boundary Values = Hybrid
+      Culling Mode = No Culling
+      Draw Faces = On
+      Draw Lines = Off
+      Instancing Transform = Default Transform
+      Lighting = true
+      Line Colour = 0, 0, 0
+      Line Colour Mode = Default
+      Line Width = 1
+      Range = Global
+      Render Edge Angle = 0 [degree]
+      Specular Lighting = On
+      Surface Drawing = Smooth Shading
+      Texture Angle = 0
+      Texture Direction = 0.0, 1.0, 0.0
+      Texture Material = Metal
+      Texture Position = 0.0, 0.0
+      Texture Scale = 1.0
+      Texture Type = Predefined
+      Tile Texture = Off
+      Transform Texture = Off
+      Transparency = 0.0
+      Visibility = false
+    END
+    BOUNDARY:nozzlewall
+      Apply Instancing Transform = On
+      Apply Texture = Off
+      Blend Texture = On
+      Colour = 0.2, 0.5, 1
+      Colour Map = Default Colour Map
+      Colour Mode = Constant
+      Colour Scale = Linear
+      Colour Variable Boundary Values = Hybrid
+      Culling Mode = No Culling
+      Draw Faces = On
+      Draw Lines = Off
+      Instancing Transform = Default Transform
+      Lighting = true
+      Line Colour = 0, 0, 0
+      Line Colour Mode = Default
+      Line Width = 1
+      Range = Global
+      Render Edge Angle = 0 [degree]
+      Specular Lighting = On
+      Surface Drawing = Smooth Shading
+      Texture Angle = 0
+      Texture Direction = 0.0, 1.0, 0.0
+      Texture Material = Metal
+      Texture Position = 0.0, 0.0
+      Texture Scale = 1.0
+      Texture Type = Predefined
+      Tile Texture = Off
+      Transform Texture = Off
+      Transparency = 0.0
+      Visibility = false
+    END
+    BOUNDARY:periodic 1
+      Apply Instancing Transform = On
+      Apply Texture = Off
+      Blend Texture = On
+      Colour = 0.2, 0.5, 1
+      Colour Map = Default Colour Map
+      Colour Mode = Constant
+      Colour Scale = Linear
+      Colour Variable Boundary Values = Hybrid
+      Culling Mode = No Culling
+      Draw Faces = On
+      Draw Lines = Off
+      Instancing Transform = Default Transform
+      Lighting = true
+      Line Colour = 0, 0, 0
+      Line Colour Mode = Default
+      Line Width = 1
+      Range = Global
+      Render Edge Angle = 0 [degree]
+      Specular Lighting = On
+      Surface Drawing = Smooth Shading
+      Texture Angle = 0
+      Texture Direction = 0.0, 1.0, 0.0
+      Texture Material = Metal
+      Texture Position = 0.0, 0.0
+      Texture Scale = 1.0
+      Texture Type = Predefined
+      Tile Texture = Off
+      Transform Texture = Off
+      Transparency = 0.0
+      Visibility = Off
     END
     BOUNDARY:periodic 1 shadow
       Apply Instancing Transform = On
@@ -339,10 +891,9 @@ NozzleC_AfterLinux_files\dp0\FFF-7\Fluent\NozzleC_Fine.2.dat
     END
     DOMAIN:solid surface_body
       Angle Definition Method = Instances in 360
-      Apply Reflection = On
-      Apply Rotation = On
-      Apply Translation = Off
-      Axis = X
+      Apply Reflection = false
+      Apply Rotation = true
+      Apply Translation = false
       Axis From File = Custom
       Background Mesh Density = 2000
       Background Mesh Generation Method = Quasi Orthogonal
@@ -353,8 +904,8 @@ NozzleC_AfterLinux_files\dp0\FFF-7\Fluent\NozzleC_Fine.2.dat
       Full Circle = Off
       Hub Curve Mode = From Turbo Region
       Inlet Curve Mode = From Turbo Region
-      Inlet Region = /DATA READER/CASE:Case Nozzle c FINE/\
-BOUNDARY:ambientinlet,/DATA READER/CASE:Case Nozzle c FINE/BOUNDARY:flowinlet
+      Inlet Region = /DATA READER/CASE:Case Nozzle c COARSE/\
+BOUNDARY:ambientinlet,/DATA READER/CASE:Case Nozzle c COARSE/BOUNDARY:flowinlet
       Instance Definition = From File
       Linear Blade Aligned Variable Available = false
       Number of Components in 360 = 1
@@ -364,19 +915,26 @@ BOUNDARY:ambientinlet,/DATA READER/CASE:Case Nozzle c FINE/BOUNDARY:flowinlet
       Number of Passages in Component = 1
       Outlet Curve Mode = From Turbo Region
       Principal Axis = Z
-      Reflection Plane Option = ZX Plane
+      Reflection Plane Option = From Plane
       Rotation Angle = 0 [degree]
-      Rotation Axis From = 0 [m], 0 [m], 0 [m]
-      Rotation Axis To = 1 [m], 0 [m], 0 [m]
+      Rotation Axis From = 0.0, 0.0, 0.0
+      Rotation Axis To = 1.0, 0.0, 0.0
       Rotation Axis Type = Principal Axis
       Shroud Curve Mode = From Turbo Region
       TBR User Theta Correction = 0.0
       Translation Vector = 0.0, 0.0, 0.0
       Turbo 360 Case without Periodics = false
-      X = 0.0 [m]
-      Y = 0.0 [m]
-      Z = 0.0 [m]
+      X = 0.0
+      Y = 0.0
+      Z = 0.0
     END
+  END
+  CASE COMPARISON:
+    Absolute Value of Difference = false
+    Mode Is Active = false
+    Same Mesh Detection Mode = Auto Detect
+    Synchronize Camera on Activate = true
+    Synchronize Visibility on Activate = true
   END
 END
 DEFAULT INSTANCE TRANSFORM:Default Transform
@@ -407,7 +965,7 @@ DEFAULT LEGEND:Default Legend View 1
   Legend Aspect = 0.07
   Legend Format = %10.3e
   Legend Orientation = Vertical
-  Legend Plot = /CONTOUR:Mach
+  Legend Plot = /CONTOUR:PressureContour
   Legend Position = 0.02, 0.15
   Legend Resolution = 256
   Legend Shading = Smooth
@@ -430,7 +988,7 @@ DEFAULT LEGEND:Default Legend View 2
   Legend Aspect = 0.07
   Legend Format = %10.3e
   Legend Orientation = Vertical
-  Legend Plot = /CONTOUR:Mach
+  Legend Plot = /CONTOUR:PressureContour
   Legend Position = 0.02, 0.15
   Legend Resolution = 256
   Legend Shading = Smooth
@@ -453,7 +1011,7 @@ DEFAULT LEGEND:Default Legend View 3
   Legend Aspect = 0.07
   Legend Format = %10.3e
   Legend Orientation = Vertical
-  Legend Plot = /CONTOUR:Mach
+  Legend Plot = /CONTOUR:PressureContour
   Legend Position = 0.02, 0.15
   Legend Resolution = 256
   Legend Shading = Smooth
@@ -476,7 +1034,7 @@ DEFAULT LEGEND:Default Legend View 4
   Legend Aspect = 0.07
   Legend Format = %10.3e
   Legend Orientation = Vertical
-  Legend Plot = /CONTOUR:Mach
+  Legend Plot = /CONTOUR:PressureContour
   Legend Position = 0.02, 0.15
   Legend Resolution = 256
   Legend Shading = Smooth
@@ -506,14 +1064,94 @@ LIBRARY:
     EXPRESSIONS:
       Accumulated Time Step = 0
       Current Time Step = 0
+      FricVelExp = sqrt(Wall Shear/Density)
       Reference Pressure = 0 [Pa]
       Sequence Step = 0
       Time = 0 [s]
+      UoverUtau = Velocity/FricVel
       atstep = Accumulated Time Step
       ctstep = Current Time Step
       sstep = Sequence Step
       t = Time
     END
+  END
+END
+LINE:NozWallC
+  Apply Instancing Transform = On
+  Colour = 1, 1, 0
+  Colour Map = Default Colour Map
+  Colour Mode = Constant
+  Colour Scale = Linear
+  Colour Variable = Pressure
+  Colour Variable Boundary Values = Conservative
+  Domain List = /DOMAIN GROUP:All Domains
+  Draw Lines = Off
+  Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+  Line Samples = 10
+  Line Type = Sample
+  Line Width = 2
+  Max = 0.0 [Pa]
+  Min = 0.0 [Pa]
+  Option = Two Points
+  Point 1 = -2.04252e-8 [m], 0.0239486 [m], -0.00156967 [m]
+  Point 2 = 0.0341201 [m], 0.0239486 [m], 0.00156968 [m]
+  Range = Global
+  Visibility = On
+  OBJECT VIEW TRANSFORM:
+    Apply Reflection = Off
+    Apply Rotation = Off
+    Apply Scale = Off
+    Apply Translation = Off
+    Principal Axis = Z
+    Reflection Plane Option = XY Plane
+    Rotation Angle = 0.0 [degree]
+    Rotation Axis From = 0 [m], 0 [m], 0 [m]
+    Rotation Axis To = 0 [m], 0 [m], 0 [m]
+    Rotation Axis Type = Principal Axis
+    Scale Vector = 1 , 1 , 1
+    Translation Vector = 0 [m], 0 [m], 0 [m]
+    X = 0.0 [m]
+    Y = 0.0 [m]
+    Z = 0.0 [m]
+  END
+END
+LINE:NozWallC2
+  Apply Instancing Transform = On
+  Colour = 1, 1, 0
+  Colour Map = Default Colour Map
+  Colour Mode = Constant
+  Colour Scale = Linear
+  Colour Variable = Pressure
+  Colour Variable Boundary Values = Conservative
+  Domain List = /DOMAIN GROUP:All Domains
+  Draw Lines = Off
+  Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+  Line Samples = 10
+  Line Type = Sample
+  Line Width = 2
+  Max = 0.0 [Pa]
+  Min = 0.0 [Pa]
+  Option = Two Points
+  Point 1 = 0.03412 [m], 0.0239486 [m], 0.00156968 [m]
+  Point 2 = 0.10357 [m], 0.0374197 [m], 0.00245262 [m]
+  Range = Global
+  Visibility = On
+  OBJECT VIEW TRANSFORM:
+    Apply Reflection = Off
+    Apply Rotation = Off
+    Apply Scale = Off
+    Apply Translation = Off
+    Principal Axis = Z
+    Reflection Plane Option = XY Plane
+    Rotation Angle = 0.0 [degree]
+    Rotation Axis From = 0 [m], 0 [m], 0 [m]
+    Rotation Axis To = 0 [m], 0 [m], 0 [m]
+    Rotation Axis Type = Principal Axis
+    Scale Vector = 1 , 1 , 1
+    Translation Vector = 0 [m], 0 [m], 0 [m]
+    X = 0.0 [m]
+    Y = 0.0 [m]
+    Z = 0.0 [m]
   END
 END
 MASS FLOW CALC OPTION ON PHYSICAL SURFACES:
@@ -522,7 +1160,7 @@ END
 REPORT:
   Report Items = /TITLE PAGE,/REPORT/FILE INFORMATION OPTIONS,/REPORT/MESH \
 STATISTICS OPTIONS,/REPORT/PHYSICS SUMMARY OPTIONS,/REPORT/SOLUTION SUMMARY \
-OPTIONS,/REPORT/OPERATING MAPS,/COMMENT:User Data
+OPTIONS,/REPORT/OPERATING MAPS,/COMMENT:User Data,/CHART:YPlus
   FILE INFORMATION OPTIONS:
     Include In Report = true
     This Exists = true
@@ -667,6 +1305,9 @@ SCALAR VARIABLE:Pressure
   Boundary Values = Conservative
 END
 SCALAR VARIABLE:Temperature
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Turbulence Eddy Dissipation
   Boundary Values = Conservative
 END
 SCALAR VARIABLE:Turbulence Eddy Frequency
@@ -903,6 +1544,24 @@ UNIT SYSTEM:
   Preferred Units System = SI
   Update Units to Preferred = Off
 END
+USER SCALAR VARIABLE:FricVel
+  Boundary Values = Conservative
+  Calculate Global Range = Off
+  Component Index = 1
+  Expression = FricVelExp
+  Recipe = Expression
+  Variable to Copy = Pressure
+  Variable to Gradient = Pressure
+END
+USER SCALAR VARIABLE:UUTau
+  Boundary Values = Conservative
+  Calculate Global Range = Off
+  Component Index = 1
+  Expression = UoverUtau
+  Recipe = Expression
+  Variable to Copy = Pressure
+  Variable to Gradient = Pressure
+END
 VECTOR VARIABLE:Force
   Boundary Values = Conservative
 END
@@ -945,18 +1604,19 @@ VIEW:View 1
   Highlight Type = Surface Mesh
   Is A Figure = false
   Light Angle = 50, 110
-  Object Visibility List = /CONTOUR:Mach,/DEFAULT LEGEND:Default Legend View \
-1
+  Object Visibility List = /CONTOUR:PressureContour,/DEFAULT LEGEND:Default \
+Legend View 1,/LINE:NozWallC,/LINE:NozWallC2,/WIREFRAME:Wireframe
   Projection = Orthographic
   Ruler Visibility = true
   Standard View = Isometric Y
+  Valid Case = Case Nozzle c FINE
   CAMERA:
     Option = Pivot Point and Quaternion
-    Pan = 0.386001,0.245574
-    Pivot Point = 0.404785,0.25146,0
+    Pan = 0.368174,0.00447284
+    Pivot Point = 0.404785,0,0
     Rotation = -90, 0, 0
     Rotation Quaternion = 0,0,0,1
-    Scale = 1.47495
+    Scale = 2.11046
     Send To Viewer = True
   END
 END
@@ -977,6 +1637,7 @@ WIREFRAME:Wireframe
   Projection = Orthographic
   Ruler Visibility = true
   Standard View = Isometric Y
+  Valid Case = Case Nozzle c COARSE
   CAMERA:
     Option = Pivot Point and Quaternion
     Pan = 0,0
@@ -1072,5 +1733,5 @@ WIREFRAME:Wireframe
   Line Colour Mode = Default
   Line Width = 1
   Show Surface Mesh = Off
-  Visibility = Off
+  Visibility = On
 END
