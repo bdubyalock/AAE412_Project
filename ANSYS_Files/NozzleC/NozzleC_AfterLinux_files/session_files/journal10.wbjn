@@ -1,0 +1,10 @@
+# encoding: utf-8
+# 2019 R2
+SetScriptVersion(Version="19.4.159")
+system1 = GetSystem(Name="FFF 6")
+ExportSystems(
+    Systems=[system1],
+    FilePath=r"W:\AAE412\Project\Git\ANSYS_Files\NozzleC.wbpz",
+    IncludeUserFiles=True,
+    IncludeResultFiles=True,
+    IncludeExternalFiles=True)
