@@ -102,3 +102,107 @@ Performance Timer for 0 iterations on 1 compute node
 
   Total wall-clock time:                              0.000 sec
 
+
+Transcript file has been opened in append mode. Time stamp=Thu Dec  5 14:43:55 2019.
+
+Build Time: Apr 16 2019 10:49:06 
+Executable Path: C:/PROGRA~1/ANSYSI~1/v194/fluent/ntbin/win64/fluent.exe
+
+-------------------------------------------------------------------------------
+ID    Hostname        Core  O.S.         PID    Vendor                   
+-------------------------------------------------------------------------------
+n0*   X-ARMS2106PC08  1/8  Windows-x64  12104  Intel(R) Xeon(R) E3-1240 
+host  X-ARMS2106PC08       Windows-x64  8668   Intel(R) Xeon(R) E3-1240 
+
+MPI Option Selected: ibmmpi
+Selected system interconnect: default
+-------------------------------------------------------------------------------
+Warning: Ignoring WB preference save-post-processing-images
+Multicore SMT processors detected. Processor affinity set!
+Reading "W:\AAE412\Project\Git\ANSYS_Files\Combined_CFD_Post\Linux200000\NozzleA_Course.3.cas"...
+Buffering for file scan...
+
+
+
+   59000 quadrilateral cells, zone  3, binary.
+Warning: reading 16 partition grid onto 1 compute node machine.
+         Combining every 16 partitions.
+   59000 cell partition ids, zone  3, 1 partitions, binary.
+  116410 2D interior faces, zone  1, binary.
+     240 2D interior faces, zone  2, binary.
+     100 2D velocity-inlet faces, zone  6, binary.
+     250 2D pressure-far-field faces, zone  7, binary.
+    1200 2D axis faces, zone  8, binary.
+      40 2D pressure-inlet faces, zone  9, binary.
+    1110 2D wall faces, zone 10, binary.
+   60351 nodes, binary.
+60351 node flags, binary.
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	nozzlewall
+	axis
+	surface_body
+	interior-surface_body
+	flowinlet
+	ambientinlet
+	farfield
+	solid-surface_body
+     parallel,
+Done.
+
+Preparing mesh for display...
+Done.
+
+Writing Settings file "W:\AAE412\Project\Git\ANSYS_Files\Combined_CFD_Post\Combined_CFD_Post_files\dp0\FFF\Fluent\NozzleA_Course.3.set"...
+	writing rp variables ... Done.
+	writing domain variables ... Done.
+	writing solid-surface_body (type fluid) (mixture) ... Done.
+	writing farfield (type pressure-far-field) (mixture) ... Done.
+	writing ambientinlet (type velocity-inlet) (mixture) ... Done.
+	writing flowinlet (type pressure-inlet) (mixture) ... Done.
+	writing interior-surface_body (type interior) (mixture) ... Done.
+	writing surface_body (type interior) (mixture) ... Done.
+	writing axis (type axis) (mixture) ... Done.
+	writing nozzlewall (type wall) (mixture) ... Done.
+	writing zones map name-id ... Done.
+Reading "W:\AAE412\Project\Git\ANSYS_Files\Combined_CFD_Post\Combined_CFD_Post_files\dp0\FFF\Fluent\NozzleA_Course.3.dat"...
+
+
+Parallel variables...
+Done.
+Writing data to W:\\AAE412\\Project\\Git\\ANSYS_Files\\Combined_CFD_Post\\Combined_CFD_Post_files\\dp0\\FFF\\Fluent\\NozzleA_Course.3.ip ...
+	x-coord
+	y-coord
+	pressure
+	x-velocity
+	y-velocity
+	temperature
+	k
+	epsilon
+Done.
+
+Performance Timer for 0 iterations on 1 compute node
+  Average wall-clock time per iteration:              0.000 sec
+  Global reductions per iteration:                        0 ops
+  Global reductions time per iteration:               0.000 sec (0.0%)
+  Message count per iteration:                            0 messages
+  Data transfer per iteration:                        0.000 MB
+  LE solves per iteration:                                0 solves
+  LE wall-clock time per iteration:                   0.000 sec (0.0%)
+  LE global solves per iteration:                         0 solves
+  LE global wall-clock time per iteration:            0.000 sec (0.0%)
+  LE global matrix maximum size:                         0
+  AMG cycles per iteration:                           0.000 cycles
+  Relaxation sweeps per iteration:                        0 sweeps
+  Relaxation exchanges per iteration:                     0 exchanges
+  LE early protections (stall) per iteration:           0.000 times
+  LE early protections (divergence) per iteration:      0.000 times
+
+  Total wall-clock time:                              0.000 sec
+

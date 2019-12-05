@@ -1,0 +1,154 @@
+# encoding: utf-8
+# 2019 R2
+SetScriptVersion(Version="19.4.159")
+system1 = GetSystem(Name="FFF 4")
+results1 = system1.GetContainer(ComponentName="Results")
+results1.Edit()
+results1.SendCommand(Command="""VIEW:View 3
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.0625079, -0.0054939, -0.000406023
+    Scale = 15.0866
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+VIEW:View 4
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.0449226, 0.00622157, -0.000455355
+    Scale = 11.2279
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+# Sending visibility action from ViewUtilities
+>show /CONTOUR:PressureContour, view=/VIEW:View 3""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /CONTOUR:Mach, view=/VIEW:View 3""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.387065, 0, -0.0163417
+    Scale = 1.12683
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+VIEW:View 3
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.101262, 0.0389778, 0.00243889
+    Scale = 4.89891
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+VIEW:View 4
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.0449226, 0.00622157, -0.000455355
+    Scale = 4.49678
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+# Sending visibility action from ViewUtilities
+>show /LINE:PipeWall2, view=/VIEW:View 3""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /LINE:PipeWall2, view=/VIEW:View 3""")
+results1.SendCommand(Command="> autolegend plot=/CONTOUR:Contour 1, view=VIEW:View 3")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /CONTOUR:PressureContour, view=/VIEW:View 3""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case A COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case A FINE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case B COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case B FINE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case C COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case C FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case A COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case A FINE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case B COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case B FINE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case C COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case C FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case A COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case A FINE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case B COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case B FINE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case C COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case C FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case A COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case A FINE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case B COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case B FINE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case C COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case C FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case A COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case A FINE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case B COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case B FINE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case C COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case C FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case A COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case A FINE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case B COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case B FINE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C FINE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case C COARSE/DOMAIN:solid surface_body
+>highlight regionlist=/DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case A FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B COARSE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case B FINE/BOUNDARY:ambientinlet;/DATA READER/CASE:Case C COARSE/BOUNDARY:ambientinlet, domainlist=/DATA READER/CASE:Case C FINE/DOMAIN:solid surface_body""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /CONTOUR:PressureContour, view=/VIEW:View 3""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /CONTOUR:Mach, view=/VIEW:View 3""")
+results1.SendCommand(Command="""VIEW:View 3
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = -0.00047568, 0.00702176, -0.00050453
+    Scale = 8.64657
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+VIEW:View 4
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.0449226, 0.00622157, -0.000455355
+    Scale = 10.1923
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+# Sending visibility action from ViewUtilities
+>hide /CONTOUR:PressureContour, view=/VIEW:View 3""")
+results1.Exit()

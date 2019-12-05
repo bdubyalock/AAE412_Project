@@ -1,4 +1,4 @@
-# State file created:  2019/12/02 22:59:48
+# State file created:  2019/12/05 14:44:35
 # CFX-19.4
 
 COMMENT:User Data
@@ -117,12 +117,10 @@ DATA READER:
   Clear All Objects = False
   Construct Variables From Fourier Coefficients = True
   Current Case List = Case A COARSE
-  Current Case Name = C:\Users\lockb\AppData\Local\Temp\WB_X-\
-ARMS2106PC44_lockb_11800_2\unsaved_project_files\dp0\FFF\Fluent\\
-NozzleA_Course.2.dat
-  Current Results File = C:\Users\lockb\AppData\Local\Temp\WB_X-\
-ARMS2106PC44_lockb_11800_2\unsaved_project_files\dp0\FFF\Fluent\\
-NozzleA_Course.2.dat
+  Current Case Name = W:\AAE412\Project\Git\ANSYS_Files\Combined_CFD_Post\\
+Combined_CFD_Post_files\dp0\FFF\Fluent\NozzleA_Course.3.dat
+  Current Results File = W:\AAE412\Project\Git\ANSYS_Files\Combined_CFD_Post\\
+Combined_CFD_Post_files\dp0\FFF\Fluent\NozzleA_Course.3.dat
   Current Timestep = -1
   Current Timevalue = 0
   Edit Case Names = false
@@ -149,12 +147,10 @@ NozzleA_Course.2.dat
   Timevalue Match Criterion = Same Value
   CASE:Case A COARSE
     Construct Variables From Fourier Coefficients = True
-    Current Case Name = C:\Users\lockb\AppData\Local\Temp\WB_X-\
-ARMS2106PC44_lockb_11800_2\unsaved_project_files\dp0\FFF\Fluent\\
-NozzleA_Course.2.dat
-    Current Results File = C:\Users\lockb\AppData\Local\Temp\WB_X-\
-ARMS2106PC44_lockb_11800_2\unsaved_project_files\dp0\FFF\Fluent\\
-NozzleA_Course.2.dat
+    Current Case Name = W:\AAE412\Project\Git\ANSYS_Files\Combined_CFD_Post\\
+Combined_CFD_Post_files\dp0\FFF\Fluent\NozzleA_Course.3.dat
+    Current Results File = W:\AAE412\Project\Git\ANSYS_Files\Combined_CFD_Post\\
+Combined_CFD_Post_files\dp0\FFF\Fluent\NozzleA_Course.3.dat
     Current Timestep = -1
     Current Timevalue = 0
     File Angle Units = rad
@@ -408,8 +404,7 @@ NozzleA_Course.2.dat
       Full Circle = Off
       Hub Curve Mode = From Turbo Region
       Inlet Curve Mode = From Turbo Region
-      Inlet Region = /DATA READER/CASE:Case A COARSE/BOUNDARY:ambientinlet,/\
-DATA READER/CASE:Case A COARSE/BOUNDARY:flowinlet
+      Inlet Region = ambientinlet,flowinlet
       Instance Definition = From File
       Linear Blade Aligned Variable Available = false
       Number of Components in 360 = 1

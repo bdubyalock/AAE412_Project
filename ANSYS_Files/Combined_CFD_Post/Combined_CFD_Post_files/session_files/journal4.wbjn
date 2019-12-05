@@ -1,0 +1,420 @@
+# encoding: utf-8
+# 2019 R2
+SetScriptVersion(Version="19.4.159")
+system1 = GetSystem(Name="FFF")
+setup1 = system1.GetContainer(ComponentName="Setup")
+setup1.Import(
+    FilePath="W:/AAE412/Project/Git/ANSYS_Files/Combined_CFD_Post/Linux200000/NozzleA_Course.3.cas",
+    FileType="Case")
+setupComponent1 = system1.GetComponent(Name="Setup")
+setupComponent1.Refresh()
+Fluent.ImportFinalData(
+    Container=setup1,
+    FilePath="W:/AAE412/Project/Git/ANSYS_Files/Combined_CFD_Post/Linux200000/NozzleA_Course.3.dat")
+solution1 = system1.GetContainer(ComponentName="Solution")
+solution1.MarkUpdateRequired()
+system2 = GetSystem(Name="FFF 1")
+setup2 = system2.GetContainer(ComponentName="Setup")
+setup2.Import(
+    FilePath="W:/AAE412/Project/Git/ANSYS_Files/Combined_CFD_Post/Linux200000/NozzleA_Fine.3.cas",
+    FileType="Case")
+setupComponent2 = system2.GetComponent(Name="Setup")
+setupComponent2.Refresh()
+Fluent.ImportFinalData(
+    Container=setup2,
+    FilePath="W:/AAE412/Project/Git/ANSYS_Files/Combined_CFD_Post/Linux200000/NozzleA_Fine.3.dat")
+solution2 = system2.GetContainer(ComponentName="Solution")
+solution2.MarkUpdateRequired()
+system3 = GetSystem(Name="FFF 2")
+setup3 = system3.GetContainer(ComponentName="Setup")
+setup3.Import(
+    FilePath="W:/AAE412/Project/Git/ANSYS_Files/Combined_CFD_Post/Linux200000/NozzleB_Course.3.cas",
+    FileType="Case")
+setupComponent3 = system3.GetComponent(Name="Setup")
+setupComponent3.Refresh()
+Fluent.ImportFinalData(
+    Container=setup3,
+    FilePath="W:/AAE412/Project/Git/ANSYS_Files/Combined_CFD_Post/Linux200000/NozzleB_Course.3.dat")
+solution3 = system3.GetContainer(ComponentName="Solution")
+solution3.MarkUpdateRequired()
+system4 = GetSystem(Name="FFF 3")
+setup4 = system4.GetContainer(ComponentName="Setup")
+setup4.Import(
+    FilePath="W:/AAE412/Project/Git/ANSYS_Files/Combined_CFD_Post/Linux200000/NozzleB_Fine.3.cas",
+    FileType="Case")
+setupComponent4 = system4.GetComponent(Name="Setup")
+setupComponent4.Refresh()
+Fluent.ImportFinalData(
+    Container=setup4,
+    FilePath="W:/AAE412/Project/Git/ANSYS_Files/Combined_CFD_Post/Linux200000/NozzleB_Fine.3.dat")
+solution4 = system4.GetContainer(ComponentName="Solution")
+solution4.MarkUpdateRequired()
+system5 = GetSystem(Name="FFF 5")
+setup5 = system5.GetContainer(ComponentName="Setup")
+setup5.Import(
+    FilePath="W:/AAE412/Project/Git/ANSYS_Files/Combined_CFD_Post/Linux200000/NozzleC_Course.3.cas",
+    FileType="Case")
+setupComponent5 = system5.GetComponent(Name="Setup")
+setupComponent5.Refresh()
+Fluent.ImportFinalData(
+    Container=setup5,
+    FilePath="W:/AAE412/Project/Git/ANSYS_Files/Combined_CFD_Post/Linux200000/NozzleC_Course.3.dat")
+solution5 = system5.GetContainer(ComponentName="Solution")
+solution5.MarkUpdateRequired()
+system6 = GetSystem(Name="FFF 6")
+setup6 = system6.GetContainer(ComponentName="Setup")
+setup6.Import(
+    FilePath="W:/AAE412/Project/Git/ANSYS_Files/Combined_CFD_Post/Linux200000/NozzleC_Fine.3.cas",
+    FileType="Case")
+setupComponent6 = system6.GetComponent(Name="Setup")
+setupComponent6.Refresh()
+Fluent.ImportFinalData(
+    Container=setup6,
+    FilePath="W:/AAE412/Project/Git/ANSYS_Files/Combined_CFD_Post/Linux200000/NozzleC_Fine.3.dat")
+solution6 = system6.GetContainer(ComponentName="Solution")
+solution6.MarkUpdateRequired()
+template1 = GetTemplate(TemplateName="Fluid Flow")
+system7 = template1.CreateSystem(
+    Position="Below",
+    RelativeTo=system1)
+system7.DisplayText = "SomethingExtra"
+setup7 = system7.GetContainer(ComponentName="Setup")
+setup7.Import(
+    FilePath="W:/AAE412/Project/Git/ANSYS_Files/Combined_CFD_Post/Linux200000/Something_Extra.3.cas",
+    FileType="Case")
+setupComponent7 = system7.GetComponent(Name="Setup")
+setupComponent7.Refresh()
+Fluent.ImportFinalData(
+    Container=setup7,
+    FilePath="W:/AAE412/Project/Git/ANSYS_Files/Combined_CFD_Post/Linux200000/Something_Extra.3.dat")
+solution7 = system7.GetContainer(ComponentName="Solution")
+solution7.MarkUpdateRequired()
+solutionComponent1 = system7.GetComponent(Name="Solution")
+system8 = GetSystem(Name="FFF 4")
+resultsComponent1 = system8.GetComponent(Name="Results")
+solutionComponent1.TransferData(TargetComponent=resultsComponent1)
+Update()
+results1 = system8.GetContainer(ComponentName="Results")
+results1.Edit()
+results1.SendCommand(Command="""VIEW:View 4
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.0449226, 0.00622157, -0.000455355
+    Scale = 10.7083
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+VIEW:View 1
+  Valid Case=Case SomethingExtra
+END""")
+results1.SendCommand(Command="""DATA READER:
+      CASE:Case SomethingExtra
+    DOMAIN:solid surface_body
+Angle Definition Method = Instances in 360
+Apply Reflection = On
+Apply Rotation = On
+Apply Translation = Off
+Axis = X
+Axis From File = Custom
+Full Circle = Off
+Instance Definition = From File
+Number of Copies = 1
+Number of Data Instances = 1
+Number of Passages in 360 = 1
+Number of Passages in Component = 1
+Principal Axis = Z
+Reflection Plane Option = ZX Plane
+Rotation Angle = 0 [degree]
+Rotation Axis From = 0 [m], 0 [m], 0 [m]
+Rotation Axis To = 1 [m], 0 [m], 0 [m]
+Rotation Axis Type = Principal Axis
+X = 0.0 [m]
+Y = 0.0 [m]
+Z = 0.0 [m]
+    END
+  END
+END""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /WIREFRAME:Wireframe, view=/VIEW:View 1""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.387065, 0, -0.0163417
+    Scale = 7.7388
+    Pan = 0.411179, 0.000930221
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+VIEW:View 4
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.0449226, 0.00622157, -0.000455355
+    Scale = 9.11886
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+VIEW:View 2
+  Valid Case=Case A FINE
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.387065, 0, -0.0163417
+    Scale = 11.9055
+    Pan = 0.433125, 0.00571852
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+VIEW:View 2
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.387065, 0, -0.0163417
+    Scale = 11.7952
+    Pan = 0.433937, 0.00507494
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+VIEW:View 4
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.0449226, 0.00622157, -0.000455355
+    Scale = 7.54736
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+VIEWPORT MANAGER:
+Viewport Layout = No Split
+Maximized Viewport = -1
+END""")
+results1.SendCommand(Command="""VIEWPORT MANAGER:
+Viewport Layout = Horizontal And Vertical Split
+Maximized Viewport = -1
+END""")
+results1.SendCommand(Command="""VIEW:View 1
+  Valid Case=Case A FINE
+END""")
+results1.SendCommand(Command="""VIEW:View 2
+  Valid Case=Case B FINE
+END""")
+results1.SendCommand(Command="""VIEW:View 4
+  Valid Case=Case C FINE
+END""")
+results1.SendCommand(Command="""VIEW:View 4
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.0449226, 0.00622157, -0.000455355
+    Scale = 3.94447
+    Pan = 0.295099, 0.0203475
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+>centerview 4""")
+results1.SendCommand(Command="""VIEW:View 4
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.404785, 0, -0.0164816
+    Scale = 3.64636
+    Pan = 0.667083, 0.00521132
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+>centerview 1""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.387065, 0, -0.0163417
+    Scale = 3.85055
+    Pan = 0.669361, 0.0198314
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+VIEW:View 2
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = -0.232125, -0.0367631, -0.00233053
+    Scale = 3.29768
+    Pan = 0.124983, -0.011233
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+HARDCOPY:
+Antialiasing = On
+Hardcopy Filename = W:/AAE412/Project/AfterBigRun/Mach_A_Fine.png
+Hardcopy Format = png
+Hardcopy Tolerance = 0.0001
+Image Height = 1080
+Image Scale = 100
+Image Width = 1080
+JPEG Image Quality = 80
+Screen Capture = Off
+Use Screen Size = Off
+White Background = On
+END
+>print""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /DEFAULT LEGEND:Default Legend View 1, view=/VIEW:View 1""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.387065, 0, -0.0163417
+    Scale = 3.85055
+    Pan = 0.663193, 0.0185977
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+VIEW:View 2
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = -0.232125, -0.0367631, -0.00233053
+    Scale = 3.29768
+    Pan = 0.11778, -0.0126736
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+HARDCOPY:
+Antialiasing = On
+Hardcopy Filename = W:/AAE412/Project/AfterBigRun/Mach_Fine.png
+Hardcopy Format = png
+Hardcopy Tolerance = 0.0001
+Image Height = 3072
+Image Scale = 100
+Image Width = 4098
+JPEG Image Quality = 80
+Screen Capture = Off
+Use Screen Size = Off
+White Background = On
+END
+>print""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /DEFAULT LEGEND:Default Legend View 2, view=/VIEW:View 2""")
+results1.SendCommand(Command="""VIEW:View 4
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 0.404785, 0, -0.0164816
+    Scale = 3.73752
+    Pan = 0.667083, 0.00521132
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+VIEWPORT MANAGER:
+Viewport Layout = No Split
+Maximized Viewport = -1
+END""")
+results1.SendCommand(Command="""VIEWPORT MANAGER:
+Viewport Layout = Vertical Split
+Maximized Viewport = -1
+END""")
+results1.SendCommand(Command="""VIEW:View 2
+  Valid Case=Case SomethingExtra
+END""")
+results1.SendCommand(Command="""VIEW:View 2
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = -0.232125, -0.0367631, -0.00233053
+    Scale = 3.82202
+    Pan = 0.0444496, -0.0205681
+    Rotation Quaternion = 0, 0, 0, 1
+    
+  END
+
+END
+
+> update
+HARDCOPY:
+Antialiasing = On
+Hardcopy Filename = W:/AAE412/Project/AfterBigRun/Mach_Extra.png
+Hardcopy Format = png
+Hardcopy Tolerance = 0.0001
+Image Height = 3072
+Image Scale = 100
+Image Width = 4098
+JPEG Image Quality = 80
+Screen Capture = Off
+Use Screen Size = Off
+White Background = On
+END
+>print""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /CONTOUR:Mach, view=/VIEW:View 2""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /CONTOUR:PressureContour, view=/VIEW:View 2""")
+results1.SendCommand(Command="""HARDCOPY:
+Antialiasing = On
+Hardcopy Filename = W:/AAE412/Project/AfterBigRun/Pressure_Extra.png
+Hardcopy Format = png
+Hardcopy Tolerance = 0.0001
+Image Height = 3072
+Image Scale = 100
+Image Width = 4098
+JPEG Image Quality = 80
+Screen Capture = Off
+Use Screen Size = Off
+White Background = On
+END
+>print""")
+results1.Exit()
+Save(Overwrite=True)
